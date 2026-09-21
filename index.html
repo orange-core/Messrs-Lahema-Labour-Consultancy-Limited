@@ -1,58 +1,1054 @@
 <!DOCTYPE html>
-<html lang="en-ZM">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lahema Labour Consultancy Limited | Labour & Employment Consultancy in Ndola</title>
+    <title>Messrs Lahema Labour Consultancy Limited | Labour & Employment Consultancy | Ndola, Zambia</title>
 
     <meta
         name="description"
-        content="Messrs Lahema Labour Consultancy Limited provides labour and employment consultancy services in Ndola, Zambia, including employment disputes, contracts, disciplinary matters, labour relations and workplace compliance."
+        content="Messrs Lahema Labour Consultancy Limited provides labour and employment consultancy services in Ndola, Zambia, covering employment law, workplace disputes, contracts, compliance, labour relations and workplace advisory."
     >
 
-    <meta name="theme-color" content="#16305C">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <meta name="theme-color" content="#102847">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
+
+    <!--
+        PAGE-SPECIFIC VISUAL SYSTEM
+        This stylesheet intentionally lives on the homepage.
+        Shared components belong in css/style.css;
+        homepage composition belongs here.
+    -->
+    <style>
+        /* =========================================================
+           HOMEPAGE FOUNDATION
+           ========================================================= */
+
+        .home-page {
+            background: #f7f5ef;
+            color: #17202c;
+            overflow-x: hidden;
+        }
+
+        .home-page section {
+            position: relative;
+        }
+
+        .home-container {
+            width: min(1180px, calc(100% - 56px));
+            margin: 0 auto;
+        }
+
+
+        /* =========================================================
+           HERO
+           ========================================================= */
+
+        .home-hero {
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(247,245,239,1) 0%,
+                    rgba(247,245,239,0.98) 54%,
+                    rgba(239,241,236,1) 100%
+                );
+            border-bottom: 1px solid #d8d7d0;
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .home-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 42%;
+            height: 100%;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(22,48,92,0.035),
+                    rgba(30,113,69,0.07)
+                );
+            border-left: 1px solid rgba(22,48,92,0.08);
+        }
+
+        .home-hero::after {
+            content: "L";
+            position: absolute;
+            right: 7%;
+            bottom: -70px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 420px;
+            line-height: 1;
+            font-weight: 700;
+            color: rgba(22,48,92,0.035);
+            pointer-events: none;
+        }
+
+        .home-hero-inner {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(360px, 0.75fr);
+            gap: 76px;
+            align-items: center;
+            padding: 82px 0 92px;
+        }
+
+        .hero-copy {
+            max-width: 700px;
+        }
+
+        .hero-index {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 28px;
+            font-family: "DM Mono", monospace;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #536071;
+        }
+
+        .hero-index-line {
+            width: 44px;
+            height: 1px;
+            background: #1e7145;
+        }
+
+        .hero-title {
+            margin: 0;
+            max-width: 720px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(54px, 6.2vw, 88px);
+            line-height: 0.98;
+            letter-spacing: -0.045em;
+            font-weight: 600;
+            color: #102847;
+        }
+
+        .hero-title em {
+            color: #1e7145;
+            font-style: normal;
+        }
+
+        .hero-description {
+            max-width: 600px;
+            margin: 32px 0 0;
+            font-size: 18px;
+            line-height: 1.75;
+            color: #536071;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 38px;
+        }
+
+        .home-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: 0 22px;
+            border: 1px solid #16305c;
+            border-radius: 4px;
+            background: #16305c;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            transition:
+                transform 180ms ease,
+                background 180ms ease,
+                color 180ms ease;
+        }
+
+        .home-button:hover {
+            transform: translateY(-2px);
+            background: #102847;
+        }
+
+        .home-button.secondary {
+            background: transparent;
+            color: #16305c;
+        }
+
+        .home-button.secondary:hover {
+            background: #16305c;
+            color: #ffffff;
+        }
+
+        .hero-caption {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 34px;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            line-height: 1.6;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #7b8491;
+        }
+
+        .hero-caption-mark {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #1e7145;
+        }
+
+
+        /* =========================================================
+           OFFICE RECORD
+           ========================================================= */
+
+        .office-record {
+            position: relative;
+            z-index: 3;
+            border: 1px solid #b9b8b0;
+            background: #ffffff;
+            box-shadow: 18px 18px 0 rgba(16,40,71,0.08);
+        }
+
+        .office-record-header {
+            min-height: 54px;
+            padding: 0 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #d9d8d1;
+            background: #102847;
+            color: #ffffff;
+        }
+
+        .office-record-label {
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
+
+        .office-record-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #dcefe3;
+        }
+
+        .office-record-status::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #4ca978;
+        }
+
+        .office-record-body {
+            padding: 32px;
+        }
+
+        .office-record-kicker {
+            margin: 0 0 12px;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: #7b8491;
+        }
+
+        .office-record-city {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 48px;
+            line-height: 1;
+            letter-spacing: -0.035em;
+            color: #102847;
+        }
+
+        .office-record-rule {
+            width: 100%;
+            height: 1px;
+            margin: 28px 0;
+            background: #d9d8d1;
+        }
+
+        .office-record-address {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #536071;
+        }
+
+        .office-record-address strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #17202c;
+            font-weight: 700;
+        }
+
+        .office-record-footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-top: 1px solid #d9d8d1;
+        }
+
+        .record-meta {
+            min-height: 82px;
+            padding: 18px 20px;
+        }
+
+        .record-meta + .record-meta {
+            border-left: 1px solid #d9d8d1;
+        }
+
+        .record-meta-label {
+            display: block;
+            margin-bottom: 8px;
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #7b8491;
+        }
+
+        .record-meta-value {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #17202c;
+            font-weight: 700;
+        }
+
+
+        /* =========================================================
+           PRACTICE SIGNAL
+           ========================================================= */
+
+        .practice-signal {
+            background: #ffffff;
+            border-bottom: 1px solid #d9d8d1;
+        }
+
+        .practice-signal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .practice-signal-item {
+            min-height: 170px;
+            padding: 32px 34px;
+            border-left: 1px solid #d9d8d1;
+        }
+
+        .practice-signal-item:last-child {
+            border-right: 1px solid #d9d8d1;
+        }
+
+        .signal-number {
+            display: block;
+            margin-bottom: 30px;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            color: #1e7145;
+        }
+
+        .signal-title {
+            margin: 0 0 8px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 27px;
+            color: #102847;
+        }
+
+        .signal-text {
+            margin: 0;
+            max-width: 280px;
+            font-size: 13px;
+            line-height: 1.65;
+            color: #7b8491;
+        }
+
+
+        /* =========================================================
+           PRACTICE INTRO
+           ========================================================= */
+
+        .practice-intro {
+            padding: 125px 0 105px;
+            background: #f7f5ef;
+        }
+
+        .practice-intro-grid {
+            display: grid;
+            grid-template-columns: 0.55fr 1.45fr;
+            gap: 80px;
+        }
+
+        .section-index {
+            padding-top: 8px;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #7b8491;
+        }
+
+        .section-index strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 28px;
+            font-weight: 400;
+            color: #1e7145;
+        }
+
+        .practice-intro-heading {
+            max-width: 780px;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(38px, 4.5vw, 65px);
+            line-height: 1.05;
+            letter-spacing: -0.035em;
+            font-weight: 500;
+            color: #102847;
+        }
+
+        .practice-intro-heading span {
+            color: #536071;
+        }
+
+        .practice-intro-copy {
+            max-width: 670px;
+            margin: 28px 0 0;
+            font-size: 17px;
+            line-height: 1.85;
+            color: #536071;
+        }
+
+
+        /* =========================================================
+           DIRECTORY
+           ========================================================= */
+
+        .directory-section {
+            padding: 0 0 120px;
+            background: #f7f5ef;
+        }
+
+        .directory-frame {
+            border-top: 2px solid #102847;
+            border-bottom: 1px solid #b9b8b0;
+            background: #ffffff;
+        }
+
+        .directory-heading {
+            display: grid;
+            grid-template-columns: 100px 1fr auto;
+            align-items: center;
+            min-height: 72px;
+            padding: 0 26px;
+            border-bottom: 1px solid #d9d8d1;
+            background: #fbfaf7;
+        }
+
+        .directory-heading-number {
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            color: #1e7145;
+        }
+
+        .directory-heading-title {
+            margin: 0;
+            font-family: "DM Mono", monospace;
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #102847;
+        }
+
+        .directory-heading-meta {
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #7b8491;
+        }
+
+        .directory-row {
+            display: grid;
+            grid-template-columns: 100px minmax(0, 1fr) 34px;
+            gap: 0;
+            align-items: center;
+            min-height: 108px;
+            padding: 0 26px;
+            border-bottom: 1px solid #d9d8d1;
+            text-decoration: none;
+            color: inherit;
+            transition:
+                background 180ms ease,
+                padding 180ms ease;
+        }
+
+        .directory-row:last-child {
+            border-bottom: 0;
+        }
+
+        .directory-row:hover {
+            padding-left: 32px;
+            background: #f3f6f2;
+        }
+
+        .directory-number {
+            font-family: "DM Mono", monospace;
+            font-size: 11px;
+            color: #7b8491;
+        }
+
+        .directory-content {
+            padding-right: 30px;
+        }
+
+        .directory-title {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 26px;
+            line-height: 1.2;
+            color: #102847;
+        }
+
+        .directory-description {
+            margin: 8px 0 0;
+            font-size: 13px;
+            line-height: 1.55;
+            color: #7b8491;
+        }
+
+        .directory-arrow {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #c9c8c1;
+            border-radius: 50%;
+            font-size: 15px;
+            color: #16305c;
+            transition:
+                transform 180ms ease,
+                background 180ms ease,
+                color 180ms ease;
+        }
+
+        .directory-row:hover .directory-arrow {
+            transform: translateX(3px);
+            background: #16305c;
+            color: #ffffff;
+        }
+
+
+        /* =========================================================
+           APPROACH / DARK SECTION
+           ========================================================= */
+
+        .approach-section {
+            padding: 110px 0 120px;
+            background: #102847;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .approach-section::before {
+            content: "";
+            position: absolute;
+            width: 620px;
+            height: 620px;
+            right: -240px;
+            top: -240px;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+
+        .approach-section::after {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            right: -140px;
+            top: -140px;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 50%;
+        }
+
+        .approach-header {
+            display: grid;
+            grid-template-columns: 0.55fr 1.45fr;
+            gap: 80px;
+            margin-bottom: 72px;
+        }
+
+        .dark-index {
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #92b7a2;
+        }
+
+        .dark-index strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 28px;
+            font-weight: 400;
+            color: #4ca978;
+        }
+
+        .approach-heading {
+            max-width: 700px;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(40px, 4.6vw, 66px);
+            line-height: 1.04;
+            letter-spacing: -0.035em;
+            font-weight: 500;
+        }
+
+        .approach-heading em {
+            color: #8fc3a5;
+            font-style: normal;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid rgba(255,255,255,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .approach-card {
+            min-height: 270px;
+            padding: 32px;
+            border-left: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .approach-card:last-child {
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .approach-card-number {
+            display: block;
+            margin-bottom: 82px;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            color: #4ca978;
+        }
+
+        .approach-card h3 {
+            margin: 0 0 12px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 29px;
+            font-weight: 500;
+        }
+
+        .approach-card p {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #b7c2d0;
+        }
+
+
+        /* =========================================================
+           OFFICE SECTION
+           ========================================================= */
+
+        .office-section {
+            padding: 120px 0;
+            background: #ffffff;
+        }
+
+        .office-section-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.8fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .office-heading {
+            max-width: 700px;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(42px, 5vw, 70px);
+            line-height: 1.02;
+            letter-spacing: -0.04em;
+            color: #102847;
+        }
+
+        .office-heading span {
+            color: #1e7145;
+        }
+
+        .office-address-large {
+            max-width: 600px;
+            margin: 32px 0 0;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #536071;
+        }
+
+        .office-map-card {
+            border: 1px solid #b9b8b0;
+            background: #f7f5ef;
+        }
+
+        .office-map-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 52px;
+            padding: 0 20px;
+            border-bottom: 1px solid #d9d8d1;
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #536071;
+        }
+
+        .office-map-grid {
+            position: relative;
+            min-height: 300px;
+            padding: 28px;
+            background-image:
+                linear-gradient(rgba(22,48,92,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(22,48,92,0.06) 1px, transparent 1px);
+            background-size: 42px 42px;
+        }
+
+        .office-map-grid::before,
+        .office-map-grid::after {
+            content: "";
+            position: absolute;
+            background: #16305c;
+            opacity: 0.14;
+        }
+
+        .office-map-grid::before {
+            width: 1px;
+            height: 100%;
+            left: 62%;
+            top: 0;
+        }
+
+        .office-map-grid::after {
+            height: 1px;
+            width: 100%;
+            left: 0;
+            top: 42%;
+        }
+
+        .map-marker {
+            position: absolute;
+            top: 42%;
+            left: 62%;
+            width: 18px;
+            height: 18px;
+            transform: translate(-50%, -50%);
+            border: 5px solid #ffffff;
+            border-radius: 50%;
+            background: #b23a2f;
+            box-shadow: 0 0 0 1px #b23a2f;
+            z-index: 2;
+        }
+
+        .map-label {
+            position: absolute;
+            top: calc(42% + 22px);
+            left: 62%;
+            transform: translateX(-50%);
+            padding: 7px 10px;
+            background: #102847;
+            color: #ffffff;
+            font-family: "DM Mono", monospace;
+            font-size: 8px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .office-map-bottom {
+            padding: 18px 20px;
+            border-top: 1px solid #d9d8d1;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #536071;
+        }
+
+
+        /* =========================================================
+           FINAL CTA
+           ========================================================= */
+
+        .home-cta {
+            padding: 105px 0;
+            background: #e9efe9;
+            border-top: 1px solid #d3ddd5;
+            border-bottom: 1px solid #d3ddd5;
+        }
+
+        .home-cta-inner {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .cta-kicker {
+            margin-bottom: 14px;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #1e7145;
+        }
+
+        .cta-heading {
+            max-width: 760px;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(38px, 4.5vw, 62px);
+            line-height: 1.05;
+            letter-spacing: -0.035em;
+            color: #102847;
+        }
+
+        .cta-copy {
+            max-width: 650px;
+            margin: 20px 0 0;
+            font-size: 15px;
+            line-height: 1.75;
+            color: #536071;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+           ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            .home-hero-inner {
+                grid-template-columns: 1fr;
+                gap: 55px;
+            }
+
+            .home-hero {
+                min-height: auto;
+            }
+
+            .office-record {
+                max-width: 650px;
+            }
+
+            .practice-intro-grid,
+            .approach-header {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .office-section-grid {
+                grid-template-columns: 1fr;
+                gap: 55px;
+            }
+        }
+
+        @media (max-width: 760px) {
+
+            .home-container {
+                width: min(100% - 36px, 1180px);
+            }
+
+            .home-hero-inner {
+                padding: 62px 0 70px;
+            }
+
+            .hero-title {
+                font-size: clamp(48px, 14vw, 72px);
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .practice-signal-grid,
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .practice-signal-item,
+            .approach-card {
+                border-left: 0;
+                border-right: 0 !important;
+                border-bottom: 1px solid #d9d8d1;
+            }
+
+            .practice-signal-item:last-child,
+            .approach-card:last-child {
+                border-bottom: 0;
+            }
+
+            .approach-card {
+                min-height: 220px;
+            }
+
+            .approach-card-number {
+                margin-bottom: 55px;
+            }
+
+            .practice-intro {
+                padding: 85px 0 75px;
+            }
+
+            .directory-heading {
+                grid-template-columns: 55px 1fr;
+            }
+
+            .directory-heading-meta {
+                display: none;
+            }
+
+            .directory-row {
+                grid-template-columns: 55px minmax(0, 1fr) 30px;
+                min-height: 125px;
+                padding: 20px 16px;
+            }
+
+            .directory-title {
+                font-size: 22px;
+            }
+
+            .directory-description {
+                max-width: 520px;
+            }
+
+            .office-section {
+                padding: 85px 0;
+            }
+
+            .home-cta {
+                padding: 80px 0;
+            }
+
+            .home-cta-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .home-container {
+                width: min(100% - 28px, 1180px);
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .home-button {
+                width: 100%;
+            }
+
+            .office-record-body {
+                padding: 24px;
+            }
+
+            .office-record-city {
+                font-size: 40px;
+            }
+
+            .office-record-footer {
+                grid-template-columns: 1fr;
+            }
+
+            .record-meta + .record-meta {
+                border-left: 0;
+                border-top: 1px solid #d9d8d1;
+            }
+
+            .directory-heading {
+                padding: 0 16px;
+            }
+
+            .directory-row {
+                grid-template-columns: 42px minmax(0, 1fr) 28px;
+            }
+
+            .directory-content {
+                padding-right: 12px;
+            }
+
+            .directory-title {
+                font-size: 20px;
+            }
+
+            .directory-description {
+                font-size: 12px;
+            }
+
+            .directory-arrow {
+                width: 27px;
+                height: 27px;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="home-page">
 
-    <!-- =========================
+    <!-- =========================================================
          HEADER
-    ========================== -->
-    <header class="site-header">
-        <div class="container nav-container">
+         ========================================================== -->
 
-            <a
-                class="brand"
-                href="index.html"
-                aria-label="Messrs Lahema Labour Consultancy Limited - Home"
-            >
-                <img
-                    src="assets/images/lahema-logo.svg"
-                    alt="Messrs Lahema Labour Consultancy Limited"
-                    class="brand-logo"
-                >
+    <header class="site-header">
+        <div class="nav-container">
+
+            <a class="brand" href="index.html" aria-label="Messrs Lahema Labour Consultancy Limited home">
+
+                <!-- Replace this fallback with the supplied Lahema logo when assets are added -->
+                <div class="brand-fallback">
+                    <span class="brand-fallback-mark">L</span>
+
+                    <span class="brand-fallback-text">
+                        Messrs Lahema
+                        <small>Labour Consultancy</small>
+                    </span>
+                </div>
+
             </a>
 
             <button
                 class="menu-toggle"
                 type="button"
-                aria-label="Open navigation menu"
                 aria-expanded="false"
                 aria-controls="primary-navigation"
+                aria-label="Open navigation menu"
             >
-                <span></span>
                 <span></span>
                 <span></span>
             </button>
@@ -62,40 +1058,24 @@
                 id="primary-navigation"
                 aria-label="Primary navigation"
             >
-                <a
-                    class="nav-link active"
-                    href="index.html"
-                    aria-current="page"
-                >
+                <a class="nav-link active" aria-current="page" href="index.html">
                     Home
                 </a>
 
-                <a
-                    class="nav-link"
-                    href="services.html"
-                >
+                <a class="nav-link" href="services.html">
                     Services
                 </a>
 
-                <a
-                    class="nav-link"
-                    href="about.html"
-                >
+                <a class="nav-link" href="about.html">
                     About
                 </a>
 
-                <a
-                    class="nav-link"
-                    href="contact.html"
-                >
+                <a class="nav-link" href="contact.html">
                     Contact
                 </a>
 
-                <a
-                    class="nav-link nav-link-cta"
-                    href="contact.html"
-                >
-                    Get In Touch
+                <a class="nav-link nav-link-cta" href="contact.html">
+                    Make an Enquiry
                 </a>
             </nav>
 
@@ -105,412 +1085,621 @@
 
     <main>
 
-        <!-- =========================
+        <!-- =====================================================
              HERO
-        ========================== -->
-        <section class="hero-section">
-            <div class="container hero-grid">
+             ====================================================== -->
 
-                <div class="hero-content" data-reveal>
+        <section class="home-hero">
 
-                    <div class="eyebrow">
-                        <span class="eyebrow-line"></span>
-                        <span>LABOUR &amp; EMPLOYMENT CONSULTANCY</span>
+            <div class="home-container home-hero-inner">
+
+                <div class="hero-copy">
+
+                    <div class="hero-index">
+                        <span class="hero-index-line"></span>
+                        <span>Labour & Employment Consultancy</span>
+                        <span>·</span>
+                        <span>Ndola, Zambia</span>
                     </div>
 
-                    <h1>
-                        Labour and employment counsel for
-                        <em>Zambian workplaces.</em>
+                    <h1 class="hero-title">
+                        Labour and employment
+                        <em>counsel</em> for Zambian workplaces.
                     </h1>
 
                     <p class="hero-description">
                         Messrs Lahema Labour Consultancy Limited provides
-                        practical support across employment law, workplace
-                        disputes, contracts, disciplinary matters, labour
-                        relations and regulatory compliance.
+                        practical professional guidance across employment
+                        matters, workplace disputes, contracts, compliance,
+                        labour relations and employee-employer concerns.
                     </p>
 
                     <div class="hero-actions">
-                        <a
-                            href="services.html"
-                            class="button button-primary"
-                        >
-                            Explore Services
+                        <a class="home-button" href="services.html">
+                            Explore Our Practice
+                            <span aria-hidden="true">&nbsp;→</span>
                         </a>
 
-                        <a
-                            href="contact.html"
-                            class="button button-secondary"
-                        >
-                            Discuss Your Matter
-                            <span aria-hidden="true">↗</span>
+                        <a class="home-button secondary" href="contact.html">
+                            Contact the Office
                         </a>
                     </div>
 
-                </div>
-
-
-                <div class="hero-panel" data-reveal>
-
-                    <div class="panel-label">
-                        <span>OFFICE</span>
-                        <span>NDOLA / ZAMBIA</span>
+                    <div class="hero-caption">
+                        <span class="hero-caption-mark"></span>
+                        <span>Professional practice · Ndola · Zambia</span>
                     </div>
 
-                    <div class="panel-divider"></div>
+                </div>
 
-                    <div class="office-marker">
-                        <span class="marker-dot"></span>
-                        <span>DEVELOPMENT BANK OF ZAMBIA</span>
+
+                <!-- OFFICE RECORD -->
+
+                <aside class="office-record" aria-label="Lahema office record">
+
+                    <div class="office-record-header">
+                        <span class="office-record-label">
+                            Practice Record / 001
+                        </span>
+
+                        <span class="office-record-status">
+                            Office
+                        </span>
                     </div>
 
-                    <h2>
-                        Practical workplace advice,
-                        grounded in the matter at hand.
-                    </h2>
+                    <div class="office-record-body">
 
-                    <p>
-                        Our office is located on the 2nd Floor, Rooms 1 &amp; 2,
-                        Right Wing, Development Bank of Zambia, between Kafubu
-                        Mall and the ZRA Building in Ndola.
-                    </p>
+                        <p class="office-record-kicker">
+                            Principal location
+                        </p>
 
-                    <a
-                        href="contact.html"
-                        class="panel-link"
-                    >
-                        Find our office
-                        <span aria-hidden="true">→</span>
-                    </a>
+                        <h2 class="office-record-city">
+                            Ndola
+                        </h2>
 
-                </div>
+                        <div class="office-record-rule"></div>
 
-            </div>
-        </section>
+                        <p class="office-record-address">
+                            <strong>Development Bank of Zambia</strong>
+                            2nd Floor, Rooms 1 &amp; 2, Right Wing<br>
+                            Between Kafubu Mall and ZRA Building<br>
+                            Ndola, Zambia
+                        </p>
 
+                    </div>
 
-        <!-- =========================
-             INTRO / POSITIONING
-        ========================== -->
-        <section class="statement-section">
-            <div class="container statement-grid">
+                    <div class="office-record-footer">
 
-                <div class="section-label" data-reveal>
-                    <span>01</span>
-                    <span>THE PRACTICE</span>
-                </div>
+                        <div class="record-meta">
+                            <span class="record-meta-label">
+                                Practice
+                            </span>
 
-                <div class="statement-content" data-reveal>
-
-                    <h2>
-                        Employment matters require more than
-                        generic answers.
-                    </h2>
-
-                    <p>
-                        Workplace issues often involve people, contracts,
-                        procedures, business obligations and legal
-                        requirements at the same time. Lahema Labour
-                        Consultancy focuses on understanding the matter
-                        properly and providing practical guidance around
-                        the workplace.
-                    </p>
-
-                    <a
-                        href="about.html"
-                        class="text-link"
-                    >
-                        About Lahema
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- =========================
-             SERVICES PREVIEW
-        ========================== -->
-        <section class="services-preview-section">
-            <div class="container">
-
-                <div class="section-heading-row" data-reveal>
-
-                    <div>
-                        <div class="eyebrow">
-                            <span class="eyebrow-line"></span>
-                            <span>AREAS OF PRACTICE</span>
+                            <span class="record-meta-value">
+                                Labour Consultancy
+                            </span>
                         </div>
 
-                        <h2>
-                            Support across the
-                            employment relationship.
-                        </h2>
+                        <div class="record-meta">
+                            <span class="record-meta-label">
+                                Focus
+                            </span>
+
+                            <span class="record-meta-value">
+                                Employment &amp; Workplace
+                            </span>
+                        </div>
+
                     </div>
 
-                    <a
-                        href="services.html"
-                        class="text-link"
-                    >
-                        View all services
-                        <span aria-hidden="true">→</span>
-                    </a>
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PRACTICE SIGNAL
+             ====================================================== -->
+
+        <section class="practice-signal" aria-label="Practice approach">
+
+            <div class="home-container practice-signal-grid">
+
+                <article class="practice-signal-item">
+
+                    <span class="signal-number">01 / PRINCIPLE</span>
+
+                    <h2 class="signal-title">
+                        Prevention
+                    </h2>
+
+                    <p class="signal-text">
+                        Clear guidance can help employers and employees
+                        identify workplace issues before they become disputes.
+                    </p>
+
+                </article>
+
+
+                <article class="practice-signal-item">
+
+                    <span class="signal-number">02 / PROCESS</span>
+
+                    <h2 class="signal-title">
+                        Procedure
+                    </h2>
+
+                    <p class="signal-text">
+                        Workplace decisions require careful attention to
+                        process, documentation, obligations and fairness.
+                    </p>
+
+                </article>
+
+
+                <article class="practice-signal-item">
+
+                    <span class="signal-number">03 / OUTCOME</span>
+
+                    <h2 class="signal-title">
+                        Resolution
+                    </h2>
+
+                    <p class="signal-text">
+                        Where matters escalate, structured negotiation,
+                        representation and dispute-resolution support can
+                        provide a clear path forward.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PRACTICE INTRO
+             ====================================================== -->
+
+        <section class="practice-intro">
+
+            <div class="home-container practice-intro-grid">
+
+                <div class="section-index">
+                    <strong>01</strong>
+                    The Practice
+                </div>
+
+                <div>
+
+                    <h2 class="practice-intro-heading">
+                        Employment matters are rarely just
+                        <span>administrative.</span>
+                    </h2>
+
+                    <p class="practice-intro-copy">
+                        They affect people, businesses, working relationships
+                        and the direction of an organisation. Lahema's practice
+                        is built around helping clients understand their
+                        position, navigate workplace obligations and respond
+                        to employment matters with clarity and structure.
+                    </p>
 
                 </div>
 
+            </div>
 
-                <div class="service-preview-list">
+        </section>
 
-                    <a
-                        href="services.html#employment-disputes"
-                        class="service-preview-item"
-                        data-reveal
-                    >
-                        <span class="service-number">01</span>
 
-                        <div class="service-preview-main">
-                            <h3>Employment Disputes &amp; Litigation</h3>
-                            <p>
-                                Support with workplace disputes, claims,
+        <!-- =====================================================
+             PRACTICE DIRECTORY
+             ====================================================== -->
+
+        <section class="directory-section">
+
+            <div class="home-container">
+
+                <div class="directory-frame">
+
+                    <div class="directory-heading">
+
+                        <span class="directory-heading-number">
+                            INDEX
+                        </span>
+
+                        <h2 class="directory-heading-title">
+                            Selected Practice Areas
+                        </h2>
+
+                        <span class="directory-heading-meta">
+                            Explore Services →
+                        </span>
+
+                    </div>
+
+
+                    <a class="directory-row" href="services.html#employment-law">
+
+                        <span class="directory-number">
+                            01
+                        </span>
+
+                        <span class="directory-content">
+
+                            <h3 class="directory-title">
+                                Labour &amp; Employment Law
+                            </h3>
+
+                            <p class="directory-description">
+                                Advisory support concerning employment
+                                obligations, workplace rights and labour matters.
+                            </p>
+
+                        </span>
+
+                        <span class="directory-arrow" aria-hidden="true">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a class="directory-row" href="services.html#disputes">
+
+                        <span class="directory-number">
+                            02
+                        </span>
+
+                        <span class="directory-content">
+
+                            <h3 class="directory-title">
+                                Employment Disputes &amp; Litigation
+                            </h3>
+
+                            <p class="directory-description">
+                                Assistance with workplace disputes, claims,
                                 negotiations and employment-related proceedings.
                             </p>
-                        </div>
 
-                        <span class="service-arrow" aria-hidden="true">↗</span>
+                        </span>
+
+                        <span class="directory-arrow" aria-hidden="true">
+                            →
+                        </span>
+
                     </a>
 
 
-                    <a
-                        href="services.html#contracts"
-                        class="service-preview-item"
-                        data-reveal
-                    >
-                        <span class="service-number">02</span>
+                    <a class="directory-row" href="services.html#contracts">
 
-                        <div class="service-preview-main">
-                            <h3>Contracts &amp; Employment Agreements</h3>
-                            <p>
-                                Drafting, formulation and review of employment
-                                contracts and workplace agreements.
+                        <span class="directory-number">
+                            03
+                        </span>
+
+                        <span class="directory-content">
+
+                            <h3 class="directory-title">
+                                Contracts &amp; Agreements
+                            </h3>
+
+                            <p class="directory-description">
+                                Employment contracts, workplace agreements,
+                                termination arrangements and related documentation.
                             </p>
-                        </div>
 
-                        <span class="service-arrow" aria-hidden="true">↗</span>
+                        </span>
+
+                        <span class="directory-arrow" aria-hidden="true">
+                            →
+                        </span>
+
                     </a>
 
 
-                    <a
-                        href="services.html#discipline"
-                        class="service-preview-item"
-                        data-reveal
-                    >
-                        <span class="service-number">03</span>
+                    <a class="directory-row" href="services.html#compliance">
 
-                        <div class="service-preview-main">
-                            <h3>Discipline &amp; Workplace Conduct</h3>
-                            <p>
-                                Guidance on disciplinary procedures, grievances,
-                                misconduct and workplace investigations.
+                        <span class="directory-number">
+                            04
+                        </span>
+
+                        <span class="directory-content">
+
+                            <h3 class="directory-title">
+                                Labour Relations &amp; Compliance
+                            </h3>
+
+                            <p class="directory-description">
+                                Guidance across workplace policies, labour
+                                relations, regulatory compliance and inspections.
                             </p>
-                        </div>
 
-                        <span class="service-arrow" aria-hidden="true">↗</span>
+                        </span>
+
+                        <span class="directory-arrow" aria-hidden="true">
+                            →
+                        </span>
+
                     </a>
 
 
-                    <a
-                        href="services.html#labour-relations"
-                        class="service-preview-item"
-                        data-reveal
-                    >
-                        <span class="service-number">04</span>
+                    <a class="directory-row" href="services.html#workplace">
 
-                        <div class="service-preview-main">
-                            <h3>Labour Relations &amp; Compliance</h3>
-                            <p>
-                                Support with labour relations, collective
-                                bargaining, inspections and workplace compliance.
+                        <span class="directory-number">
+                            05
+                        </span>
+
+                        <span class="directory-content">
+
+                            <h3 class="directory-title">
+                                Workplace Conduct &amp; Investigations
+                            </h3>
+
+                            <p class="directory-description">
+                                Disciplinary procedures, grievances, misconduct,
+                                investigations, harassment and discrimination matters.
                             </p>
-                        </div>
 
-                        <span class="service-arrow" aria-hidden="true">↗</span>
+                        </span>
+
+                        <span class="directory-arrow" aria-hidden="true">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a class="directory-row" href="services.html#workforce">
+
+                        <span class="directory-number">
+                            06
+                        </span>
+
+                        <span class="directory-content">
+
+                            <h3 class="directory-title">
+                                Workforce Changes &amp; Benefits
+                            </h3>
+
+                            <p class="directory-description">
+                                Retrenchment, redundancy, termination,
+                                compensation and employee benefit matters.
+                            </p>
+
+                        </span>
+
+                        <span class="directory-arrow" aria-hidden="true">
+                            →
+                        </span>
+
                     </a>
 
                 </div>
 
             </div>
+
         </section>
 
 
-        <!-- =========================
-             SCOPE STRIP
-        ========================== -->
-        <section class="scope-section">
-            <div class="container scope-grid">
+        <!-- =====================================================
+             APPROACH
+             ====================================================== -->
 
-                <div class="scope-intro" data-reveal>
-                    <span class="scope-kicker">THE WORKPLACE</span>
+        <section class="approach-section">
 
-                    <h2>
-                        From the employment contract
-                        to the difficult conversation.
-                    </h2>
-                </div>
+            <div class="home-container">
 
+                <div class="approach-header">
 
-                <div class="scope-points">
-
-                    <div class="scope-point" data-reveal>
-                        <span class="scope-index">A</span>
-                        <div>
-                            <h3>Prevention</h3>
-                            <p>
-                                Employment documentation, workplace policies,
-                                compliance and advisory support.
-                            </p>
-                        </div>
+                    <div class="dark-index">
+                        <strong>02</strong>
+                        How We Work
                     </div>
 
+                    <div>
 
-                    <div class="scope-point" data-reveal>
-                        <span class="scope-index">B</span>
-                        <div>
-                            <h3>Process</h3>
-                            <p>
-                                Disciplinary procedures, grievances,
-                                investigations and labour relations matters.
-                            </p>
-                        </div>
-                    </div>
-
-
-                    <div class="scope-point" data-reveal>
-                        <span class="scope-index">C</span>
-                        <div>
-                            <h3>Resolution</h3>
-                            <p>
-                                Negotiation, mediation, conciliation and
-                                support through employment disputes.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- =========================
-             LOCATION
-        ========================== -->
-        <section class="location-section">
-            <div class="container location-grid">
-
-                <div class="location-label" data-reveal>
-                    <span class="eyebrow">
-                        <span class="eyebrow-line"></span>
-                        <span>WHERE TO FIND US</span>
-                    </span>
-                </div>
-
-
-                <div class="location-content" data-reveal>
-
-                    <div class="location-heading">
-                        <span class="location-pin" aria-hidden="true">+</span>
-
-                        <h2>
-                            Ndola, Zambia
+                        <h2 class="approach-heading">
+                            Practical advice.
+                            <em>Structured action.</em>
+                            Clear direction.
                         </h2>
+
                     </div>
 
-                    <p>
-                        Development Bank of Zambia<br>
-                        2nd Floor, Rooms 1 &amp; 2, Right Wing<br>
-                        Between Kafubu Mall and ZRA Building
-                    </p>
+                </div>
 
-                    <a
-                        href="contact.html"
-                        class="button button-dark"
-                    >
-                        Contact the Office
-                        <span aria-hidden="true">↗</span>
-                    </a>
+
+                <div class="approach-grid">
+
+                    <article class="approach-card">
+
+                        <span class="approach-card-number">
+                            01 / UNDERSTAND
+                        </span>
+
+                        <h3>
+                            Listen
+                        </h3>
+
+                        <p>
+                            We begin by understanding the workplace issue,
+                            the people involved and the practical circumstances
+                            surrounding the matter.
+                        </p>
+
+                    </article>
+
+
+                    <article class="approach-card">
+
+                        <span class="approach-card-number">
+                            02 / ADVISE
+                        </span>
+
+                        <h3>
+                            Advise
+                        </h3>
+
+                        <p>
+                            Relevant obligations, options and considerations
+                            are identified so that clients can approach the
+                            matter with greater clarity.
+                        </p>
+
+                    </article>
+
+
+                    <article class="approach-card">
+
+                        <span class="approach-card-number">
+                            03 / PROCEED
+                        </span>
+
+                        <h3>
+                            Resolve
+                        </h3>
+
+                        <p>
+                            Where action is required, the next steps can be
+                            approached through a structured and practical process.
+                        </p>
+
+                    </article>
 
                 </div>
 
             </div>
+
         </section>
 
 
-        <!-- =========================
-             CTA
-        ========================== -->
-        <section class="cta-section">
-            <div class="container cta-grid">
+        <!-- =====================================================
+             OFFICE
+             ====================================================== -->
 
-                <div data-reveal>
-                    <div class="eyebrow eyebrow-light">
-                        <span class="eyebrow-line"></span>
-                        <span>START WITH THE MATTER</span>
+        <section class="office-section">
+
+            <div class="home-container office-section-grid">
+
+                <div>
+
+                    <div class="section-index">
+                        <strong>03</strong>
+                        Find the Office
                     </div>
 
-                    <h2>
-                        Have a workplace matter
-                        that needs attention?
+                    <h2 class="office-heading">
+                        Based in <span>Ndola.</span>
+                        Focused on workplace matters.
                     </h2>
+
+                    <p class="office-address-large">
+                        Our office is located on the second floor of the
+                        Development Bank of Zambia, Right Wing, Rooms 1 &amp; 2,
+                        between Kafubu Mall and the ZRA Building in Ndola.
+                    </p>
+
                 </div>
 
 
-                <div class="cta-action" data-reveal>
-                    <p>
-                        Tell us what you need assistance with and
-                        we can discuss the appropriate next step.
+                <div class="office-map-card">
+
+                    <div class="office-map-top">
+                        <span>Office Location</span>
+                        <span>Ndola / Zambia</span>
+                    </div>
+
+                    <div class="office-map-grid">
+
+                        <span class="map-marker" aria-hidden="true"></span>
+
+                        <span class="map-label">
+                            Lahema Office
+                        </span>
+
+                    </div>
+
+                    <div class="office-map-bottom">
+                        Development Bank of Zambia · 2nd Floor ·
+                        Rooms 1 &amp; 2 · Right Wing
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA
+             ====================================================== -->
+
+        <section class="home-cta">
+
+            <div class="home-container home-cta-inner">
+
+                <div>
+
+                    <div class="cta-kicker">
+                        Begin with the issue
+                    </div>
+
+                    <h2 class="cta-heading">
+                        Have a workplace matter that needs attention?
+                    </h2>
+
+                    <p class="cta-copy">
+                        Contact the office to begin an enquiry concerning
+                        labour, employment, workplace or employee-employer
+                        matters.
                     </p>
 
-                    <a
-                        href="contact.html"
-                        class="button button-light"
-                    >
+                </div>
+
+                <div>
+                    <a class="home-button" href="contact.html">
                         Make an Enquiry
-                        <span aria-hidden="true">↗</span>
+                        <span aria-hidden="true">&nbsp;→</span>
                     </a>
                 </div>
 
             </div>
+
         </section>
 
     </main>
 
 
-    <!-- =========================
+    <!-- =========================================================
          FOOTER
-    ========================== -->
+         ========================================================== -->
+
     <footer class="site-footer">
 
-        <div class="container footer-main">
+        <div class="container footer-grid">
 
-            <div class="footer-brand">
+            <div class="brand-footer">
 
-                <a
-                    class="brand brand-footer"
-                    href="index.html"
-                    aria-label="Messrs Lahema Labour Consultancy Limited - Home"
-                >
-                    <img
-                        src="assets/images/lahema-logo.svg"
-                        alt="Messrs Lahema Labour Consultancy Limited"
-                        class="brand-logo"
-                    >
+                <a class="brand" href="index.html" aria-label="Messrs Lahema Labour Consultancy Limited home">
+
+                    <div class="brand-fallback">
+                        <span class="brand-fallback-mark">L</span>
+
+                        <span class="brand-fallback-text">
+                            Messrs Lahema
+                            <small>Labour Consultancy</small>
+                        </span>
+                    </div>
+
                 </a>
 
-                <p>
-                    Labour and employment consultancy
-                    for workplaces in Zambia.
+                <p class="footer-brand-copy">
+                    Labour and employment consultancy for workplaces,
+                    employers and employees in Zambia.
                 </p>
 
             </div>
@@ -518,9 +1707,7 @@
 
             <div class="footer-column">
 
-                <span class="footer-heading">
-                    NAVIGATION
-                </span>
+                <h3>Navigation</h3>
 
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
@@ -532,19 +1719,13 @@
 
             <div class="footer-column">
 
-                <span class="footer-heading">
-                    OFFICE
-                </span>
+                <h3>Office</h3>
 
                 <p>
                     Development Bank of Zambia<br>
                     2nd Floor, Rooms 1 &amp; 2<br>
-                    Right Wing, Ndola, Zambia
-                </p>
-
-                <p>
-                    Between Kafubu Mall<br>
-                    and ZRA Building
+                    Right Wing<br>
+                    Ndola, Zambia
                 </p>
 
             </div>
@@ -557,24 +1738,12 @@
             <span>
                 © <span data-current-year></span>
                 Messrs Lahema Labour Consultancy Limited.
-                All rights reserved.
             </span>
-
 
             <span class="footer-credit">
                 Website by
-
-                <a
-                    href="https://orangecore.xyz"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Orange Core"
-                >
-                    <img
-                        src="assets/images/orange-core-logo.svg"
-                        alt="Orange Core"
-                        class="orange-core-logo"
-                    >
+                <a href="https://orangecore.xyz" target="_blank" rel="noopener">
+                    Orange Core
                 </a>
             </span>
 

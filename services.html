@@ -5,33 +5,643 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Services | Messrs Lahema Labour Consultancy Limited</title>
+
     <meta
         name="description"
-        content="Explore labour and employment consultancy services offered by Messrs Lahema Labour Consultancy Limited in Ndola, Zambia."
+        content="Explore the labour and employment consultancy services provided by Messrs Lahema Labour Consultancy Limited in Ndola, Zambia."
     >
 
+    <meta name="theme-color" content="#102847">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
+
+    <!-- PAGE-SPECIFIC SERVICES DESIGN -->
+    <style>
+
+        .services-page {
+            background: #f7f5ef;
+            color: #17202c;
+            overflow-x: hidden;
+        }
+
+        .services-container {
+            width: min(1180px, calc(100% - 56px));
+            margin: 0 auto;
+        }
+
+
+        /* =====================================================
+           SERVICES HERO
+           ===================================================== */
+
+        .services-hero {
+            position: relative;
+            background: #102847;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .services-hero::before {
+            content: "02";
+            position: absolute;
+            right: 4%;
+            bottom: -95px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 390px;
+            line-height: 1;
+            color: rgba(255,255,255,0.035);
+            pointer-events: none;
+        }
+
+        .services-hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 36%;
+            height: 100%;
+            border-left: 1px solid rgba(255,255,255,0.08);
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(30,113,69,0.13),
+                    transparent 65%
+                );
+        }
+
+        .services-hero-inner {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+            gap: 80px;
+            align-items: end;
+            padding: 105px 0 110px;
+        }
+
+        .services-hero-copy {
+            max-width: 760px;
+        }
+
+        .services-kicker {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 30px;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #a9c6b4;
+        }
+
+        .services-kicker::before {
+            content: "";
+            width: 42px;
+            height: 1px;
+            background: #4ca978;
+        }
+
+        .services-hero h1 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(58px, 7vw, 96px);
+            line-height: 0.96;
+            letter-spacing: -0.05em;
+            font-weight: 500;
+        }
+
+        .services-hero h1 em {
+            color: #75b48e;
+            font-style: normal;
+        }
+
+        .services-hero-description {
+            max-width: 650px;
+            margin: 32px 0 0;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #b9c4d1;
+        }
+
+        .services-index-panel {
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.035);
+        }
+
+        .services-index-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 52px;
+            padding: 0 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #a9b8c9;
+        }
+
+        .services-index-body {
+            padding: 28px;
+        }
+
+        .services-index-number {
+            display: block;
+            margin-bottom: 10px;
+            font-family: "DM Mono", monospace;
+            font-size: 11px;
+            color: #4ca978;
+        }
+
+        .services-index-title {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        .services-index-copy {
+            margin: 18px 0 0;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #aebbc9;
+        }
+
+        .services-index-footer {
+            padding: 16px 20px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #7e92a8;
+        }
+
+
+        /* =====================================================
+           INTRO
+           ===================================================== */
+
+        .services-intro {
+            padding: 105px 0 85px;
+            background: #ffffff;
+            border-bottom: 1px solid #d9d8d1;
+        }
+
+        .services-intro-grid {
+            display: grid;
+            grid-template-columns: 0.55fr 1.45fr;
+            gap: 80px;
+        }
+
+        .services-section-index {
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: #7b8491;
+        }
+
+        .services-section-index strong {
+            display: block;
+            margin-bottom: 8px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 38px;
+            font-weight: 400;
+            color: #1e7145;
+        }
+
+        .services-intro h2 {
+            max-width: 760px;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(38px, 4.5vw, 63px);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            font-weight: 500;
+            color: #102847;
+        }
+
+        .services-intro h2 span {
+            color: #667181;
+        }
+
+        .services-intro p {
+            max-width: 690px;
+            margin: 28px 0 0;
+            font-size: 16px;
+            line-height: 1.85;
+            color: #536071;
+        }
+
+
+        /* =====================================================
+           SERVICE DIRECTORY
+           ===================================================== */
+
+        .services-directory {
+            padding: 95px 0 120px;
+            background: #f7f5ef;
+        }
+
+        .directory-topline {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 38px;
+        }
+
+        .directory-topline h2 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 42px;
+            line-height: 1;
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            color: #102847;
+        }
+
+        .directory-topline p {
+            max-width: 410px;
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.65;
+            color: #7b8491;
+        }
+
+
+        /* CATEGORY */
+
+        .service-category {
+            margin-top: 28px;
+            border: 1px solid #c8c7c0;
+            background: #ffffff;
+        }
+
+        .service-category-header {
+            display: grid;
+            grid-template-columns: 72px 1fr auto;
+            align-items: center;
+            min-height: 76px;
+            padding: 0 24px;
+            background: #fbfaf7;
+            border-bottom: 1px solid #d9d8d1;
+        }
+
+        .service-category-number {
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+            color: #1e7145;
+        }
+
+        .service-category-header h3 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            font-weight: 500;
+            color: #102847;
+        }
+
+        .service-category-header span:last-child {
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #8a929c;
+        }
+
+        .service-detail {
+            display: grid;
+            grid-template-columns: 72px minmax(0, 1fr);
+            gap: 0;
+            padding: 28px 24px;
+            border-bottom: 1px solid #e1e0d9;
+        }
+
+        .service-detail:last-child {
+            border-bottom: 0;
+        }
+
+        .service-detail-index {
+            padding-top: 3px;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            color: #9a9fa6;
+        }
+
+        .service-detail h4 {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.4;
+            font-weight: 700;
+            color: #17202c;
+        }
+
+        .service-detail p {
+            max-width: 720px;
+            margin: 8px 0 0;
+            font-size: 13px;
+            line-height: 1.65;
+            color: #737d89;
+        }
+
+
+        /* =====================================================
+           SERVICE HIGHLIGHT
+           ===================================================== */
+
+        .service-highlight {
+            padding: 110px 0;
+            background: #eaf1ec;
+            border-top: 1px solid #d3ded5;
+            border-bottom: 1px solid #d3ded5;
+        }
+
+        .service-highlight-grid {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            gap: 80px;
+        }
+
+        .highlight-label {
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: #1e7145;
+        }
+
+        .highlight-label strong {
+            display: block;
+            margin-bottom: 8px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 36px;
+            font-weight: 400;
+        }
+
+        .service-highlight h2 {
+            max-width: 720px;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(38px, 4.4vw, 60px);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            font-weight: 500;
+            color: #102847;
+        }
+
+        .service-highlight h2 em {
+            color: #1e7145;
+            font-style: normal;
+        }
+
+        .service-highlight p {
+            max-width: 690px;
+            margin: 24px 0 0;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #536071;
+        }
+
+
+        /* =====================================================
+           CTA
+           ===================================================== */
+
+        .services-cta {
+            padding: 105px 0;
+            background: #ffffff;
+        }
+
+        .services-cta-box {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 60px;
+            align-items: center;
+            padding: 48px;
+            border: 1px solid #b9b8b0;
+            background: #f7f5ef;
+        }
+
+        .services-cta-kicker {
+            margin-bottom: 12px;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: #1e7145;
+        }
+
+        .services-cta h2 {
+            max-width: 700px;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(35px, 4vw, 54px);
+            line-height: 1.05;
+            letter-spacing: -0.035em;
+            font-weight: 500;
+            color: #102847;
+        }
+
+        .services-cta p {
+            max-width: 650px;
+            margin: 18px 0 0;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #667181;
+        }
+
+        .services-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: 0 24px;
+            border: 1px solid #16305c;
+            border-radius: 4px;
+            background: #16305c;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            transition: transform 180ms ease, background 180ms ease;
+        }
+
+        .services-button:hover {
+            transform: translateY(-2px);
+            background: #102847;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .services-hero-inner {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .services-index-panel {
+                max-width: 650px;
+            }
+
+            .services-intro-grid,
+            .service-highlight-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+        }
+
+        @media (max-width: 760px) {
+
+            .services-container {
+                width: min(100% - 36px, 1180px);
+            }
+
+            .services-hero-inner {
+                padding: 75px 0 80px;
+            }
+
+            .services-hero h1 {
+                font-size: clamp(52px, 14vw, 76px);
+            }
+
+            .services-hero-description {
+                font-size: 15px;
+            }
+
+            .services-intro {
+                padding: 80px 0 65px;
+            }
+
+            .services-directory {
+                padding: 75px 0 90px;
+            }
+
+            .directory-topline {
+                display: block;
+            }
+
+            .directory-topline p {
+                margin-top: 16px;
+            }
+
+            .service-category-header {
+                grid-template-columns: 50px 1fr;
+                padding: 0 16px;
+            }
+
+            .service-category-header span:last-child {
+                display: none;
+            }
+
+            .service-detail {
+                grid-template-columns: 45px 1fr;
+                padding: 24px 16px;
+            }
+
+            .service-highlight {
+                padding: 80px 0;
+            }
+
+            .services-cta {
+                padding: 75px 0;
+            }
+
+            .services-cta-box {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .services-container {
+                width: min(100% - 28px, 1180px);
+            }
+
+            .services-index-body {
+                padding: 24px;
+            }
+
+            .services-hero h1 {
+                font-size: 50px;
+            }
+
+            .directory-topline h2 {
+                font-size: 35px;
+            }
+
+            .service-category-header h3 {
+                font-size: 21px;
+            }
+
+            .service-detail h4 {
+                font-size: 14px;
+            }
+
+            .service-detail p {
+                font-size: 12px;
+            }
+
+            .services-cta-box {
+                padding: 24px;
+            }
+
+            .services-button {
+                width: 100%;
+            }
+        }
+
+    </style>
 </head>
 
-<body>
+<body class="services-page">
+
 
     <!-- =========================================================
          HEADER
-    ========================================================== -->
-    <header class="site-header">
-        <div class="container nav-container">
+         ========================================================== -->
 
-            <a class="brand" href="index.html" aria-label="Messrs Lahema Labour Consultancy Limited home">
-                <div class="brand-fallback" aria-hidden="true">
-                    <span class="brand-fallback-mark">L</span>
+    <header class="site-header">
+
+        <div class="nav-container">
+
+            <a
+                class="brand"
+                href="index.html"
+                aria-label="Messrs Lahema Labour Consultancy Limited home"
+            >
+
+                <!-- Replace with supplied Lahema logo when assets are available -->
+                <div class="brand-fallback">
+
+                    <span class="brand-fallback-mark">
+                        L
+                    </span>
 
                     <span class="brand-fallback-text">
-                        Messrs Lahema<br>
-                        Labour Consultancy
+                        Messrs Lahema
+                        <small>Labour Consultancy</small>
                     </span>
+
                 </div>
+
             </a>
+
 
             <button
                 class="menu-toggle"
@@ -44,12 +654,16 @@
                 <span></span>
             </button>
 
+
             <nav
                 class="primary-navigation"
                 id="primary-navigation"
                 aria-label="Primary navigation"
             >
-                <a class="nav-link" href="index.html">Home</a>
+
+                <a class="nav-link" href="index.html">
+                    Home
+                </a>
 
                 <a
                     class="nav-link active"
@@ -59,643 +673,805 @@
                     Services
                 </a>
 
-                <a class="nav-link" href="about.html">About</a>
-
-                <a class="nav-link" href="contact.html">Contact</a>
-
-                <a
-                    class="nav-link nav-link-cta"
-                    href="contact.html"
-                >
-                    Get In Touch
+                <a class="nav-link" href="about.html">
+                    About
                 </a>
+
+                <a class="nav-link" href="contact.html">
+                    Contact
+                </a>
+
+                <a class="nav-link nav-link-cta" href="contact.html">
+                    Make an Enquiry
+                </a>
+
             </nav>
 
         </div>
+
     </header>
 
 
     <main>
 
-        <!-- =====================================================
-             PAGE HERO
-        ====================================================== -->
-        <section class="page-hero">
-            <div class="container page-hero-grid">
 
-                <div>
-                    <p class="eyebrow">
-                        <span>02</span>
-                        Practice Areas
-                    </p>
+        <!-- =====================================================
+             HERO
+             ====================================================== -->
+
+        <section class="services-hero">
+
+            <div class="services-container services-hero-inner">
+
+                <div class="services-hero-copy">
+
+                    <div class="services-kicker">
+                        <span>Practice Directory</span>
+                    </div>
 
                     <h1>
-                        Employment matters,
-                        <em>handled with clarity.</em>
+                        Services built around
+                        <em>work.</em>
                     </h1>
 
-                    <p>
-                        Our practice covers the legal, procedural and
-                        workplace issues that arise throughout the
-                        employment relationship — from contracts and
-                        compliance to disputes, discipline and termination.
+                    <p class="services-hero-description">
+                        From employment contracts and workplace policies to
+                        disputes, disciplinary matters, labour relations and
+                        workforce changes, Lahema provides professional
+                        consultancy across the employment relationship.
                     </p>
+
                 </div>
 
-                <aside class="page-hero-index">
-                    <div class="page-hero-index-top">
-                        <span>Practice Index</span>
-                        <span>19 Areas</span>
+
+                <aside class="services-index-panel">
+
+                    <div class="services-index-header">
+                        <span>Directory / 02</span>
+                        <span>19 Practice Areas</span>
                     </div>
 
-                    <div class="page-hero-index-body">
-                        <span class="docket">MLC / SERVICES / 2026</span>
+                    <div class="services-index-body">
 
-                        <strong>
-                            Labour &amp;<br>
-                            Employment
-                        </strong>
+                        <span class="services-index-number">
+                            LAHEMA / SERVICES
+                        </span>
 
-                        <p>
-                            Advisory support for employers,
-                            employees and organisations navigating
-                            workplace matters.
+                        <h2 class="services-index-title">
+                            Employment &amp;
+                            Workplace Matters
+                        </h2>
+
+                        <p class="services-index-copy">
+                            A structured overview of the firm's labour,
+                            employment, workplace and compliance services.
                         </p>
+
                     </div>
+
+                    <div class="services-index-footer">
+                        Ndola · Zambia
+                    </div>
+
                 </aside>
 
             </div>
+
         </section>
 
 
         <!-- =====================================================
              INTRO
-        ====================================================== -->
-        <section class="section section-paper services-intro">
-            <div class="container services-intro-grid">
+             ====================================================== -->
 
-                <div class="services-intro-copy" data-reveal>
-                    <p class="eyebrow">
-                        Our Scope
-                    </p>
+        <section class="services-intro">
 
-                    <h2 class="section-heading">
-                        From workplace questions
-                        to formal proceedings.
-                    </h2>
+            <div class="services-container services-intro-grid">
+
+                <div class="services-section-index">
+                    <strong>01</strong>
+                    Scope of Practice
                 </div>
 
-                <div data-reveal>
-                    <p>
-                        Employment matters rarely exist in isolation.
-                        A contract can become a disciplinary issue.
-                        A workplace dispute can become a formal claim.
-                        A termination can raise questions about procedure,
-                        compliance and employee rights.
-                    </p>
+                <div>
+
+                    <h2>
+                        One workplace can involve
+                        <span>many connected issues.</span>
+                    </h2>
 
                     <p>
-                        Our services are structured around those
-                        connected stages, giving clients a clear point
-                        of reference when a workplace matter needs
-                        attention.
+                        Employment matters often overlap. A disciplinary
+                        concern can involve procedure and workplace policy.
+                        A termination can involve contracts, employee rights
+                        and dispute resolution. Our service areas are therefore
+                        organised around the different stages and concerns
+                        that can arise in a working relationship.
                     </p>
+
                 </div>
 
             </div>
+
         </section>
 
 
         <!-- =====================================================
-             SERVICES DIRECTORY
-        ====================================================== -->
-        <section class="section services-directory">
-            <div class="container">
+             DIRECTORY
+             ====================================================== -->
+
+        <section class="services-directory">
+
+            <div class="services-container">
+
+                <div class="directory-topline">
+
+                    <h2>
+                        Practice Areas
+                    </h2>
+
+                    <p>
+                        Explore the firm's core areas of labour and employment
+                        consultancy. Each category represents a distinct area
+                        of workplace support.
+                    </p>
+
+                </div>
+
 
                 <!-- CATEGORY 01 -->
-                <article
+
+                <section
                     class="service-category"
                     id="employment-law"
-                    data-reveal
                 >
-                    <div class="service-category-header">
+
+                    <header class="service-category-header">
 
                         <span class="service-category-number">
                             01
                         </span>
 
-                        <h2>
+                        <h3>
                             Employment Law &amp; Advisory
-                        </h2>
+                        </h3>
 
-                    </div>
+                        <span>
+                            03 Services
+                        </span>
 
-                    <div class="service-category-body">
+                    </header>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">01.01</span>
 
-                            <h3>
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            01.01
+                        </span>
+
+                        <div>
+
+                            <h4>
                                 Labour &amp; Employment Law
-                            </h3>
+                            </h4>
 
                             <p>
-                                Advice and support on legal issues
-                                arising from employment relationships
-                                and workplace obligations.
+                                Professional guidance concerning employment
+                                relationships, workplace obligations and
+                                labour-related matters.
                             </p>
+
                         </div>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">01.02</span>
+                    </article>
 
-                            <h3>
+
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            01.02
+                        </span>
+
+                        <div>
+
+                            <h4>
                                 Employee Rights &amp; Employer Compliance
-                            </h3>
+                            </h4>
 
                             <p>
-                                Guidance concerning employee rights,
-                                employer responsibilities and workplace
-                                compliance requirements.
+                                Support in understanding workplace rights,
+                                responsibilities and employer compliance
+                                considerations.
                             </p>
+
                         </div>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">01.03</span>
+                    </article>
 
-                            <h3>
+
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            01.03
+                        </span>
+
+                        <div>
+
+                            <h4>
                                 Employment Advisory &amp; Legal Consultations
-                            </h3>
+                            </h4>
 
                             <p>
-                                Consultative support for specific
-                                employment questions, workplace decisions
-                                and emerging labour matters.
+                                Professional consultation concerning specific
+                                employment and workplace situations.
                             </p>
+
                         </div>
 
-                    </div>
-                </article>
+                    </article>
+
+                </section>
 
 
                 <!-- CATEGORY 02 -->
-                <article
+
+                <section
                     class="service-category"
-                    id="employment-disputes"
-                    data-reveal
+                    id="disputes"
                 >
-                    <div class="service-category-header">
+
+                    <header class="service-category-header">
 
                         <span class="service-category-number">
                             02
                         </span>
 
-                        <h2>
+                        <h3>
                             Disputes &amp; Resolution
-                        </h2>
+                        </h3>
 
-                    </div>
+                        <span>
+                            04 Services
+                        </span>
 
-                    <div class="service-category-body">
+                    </header>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">02.01</span>
 
-                            <h3>
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            02.01
+                        </span>
+
+                        <div>
+
+                            <h4>
                                 Employment Disputes &amp; Litigation
-                            </h3>
+                            </h4>
 
                             <p>
-                                Assistance with employment disputes,
-                                formal proceedings and matters requiring
-                                structured legal representation or advice.
+                                Assistance with employment-related disputes,
+                                claims and proceedings.
                             </p>
+
                         </div>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">02.02</span>
+                    </article>
 
-                            <h3>
+
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            02.02
+                        </span>
+
+                        <div>
+
+                            <h4>
                                 Unfair Dismissal &amp; Wrongful Termination
-                            </h3>
+                            </h4>
 
                             <p>
-                                Advice concerning contested dismissals,
-                                termination procedures and related
-                                employment claims.
+                                Support concerning disputes and advisory
+                                matters arising from employment termination.
                             </p>
+
                         </div>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">02.03</span>
+                    </article>
 
-                            <h3>
+
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            02.03
+                        </span>
+
+                        <div>
+
+                            <h4>
                                 Negotiation, Mediation &amp; Conciliation
-                            </h3>
+                            </h4>
 
                             <p>
-                                Structured assistance in resolving
-                                employment disagreements through
-                                negotiation, mediation and conciliation.
+                                Assistance with structured approaches to
+                                resolving workplace disputes and disagreements.
                             </p>
+
                         </div>
 
-                    </div>
-                </article>
+                    </article>
+
+
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            02.04
+                        </span>
+
+                        <div>
+
+                            <h4>
+                                Workplace Investigations
+                            </h4>
+
+                            <p>
+                                Professional support concerning workplace
+                                investigations and related employment matters.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </section>
 
 
                 <!-- CATEGORY 03 -->
-                <article
+
+                <section
                     class="service-category"
                     id="contracts"
-                    data-reveal
                 >
-                    <div class="service-category-header">
+
+                    <header class="service-category-header">
 
                         <span class="service-category-number">
                             03
                         </span>
 
-                        <h2>
+                        <h3>
                             Contracts &amp; Agreements
-                        </h2>
+                        </h3>
 
-                    </div>
+                        <span>
+                            02 Services
+                        </span>
 
-                    <div class="service-category-body">
+                    </header>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">03.01</span>
 
-                            <h3>
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            03.01
+                        </span>
+
+                        <div>
+
+                            <h4>
                                 Contract Drafting &amp; Formulation
-                            </h3>
+                            </h4>
 
                             <p>
-                                Preparation and review of employment-related
-                                contractual documents with attention to
-                                clarity and enforceability.
+                                Preparation and formulation of employment-related
+                                contractual documentation.
                             </p>
+
                         </div>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">03.02</span>
+                    </article>
 
-                            <h3>
+
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            03.02
+                        </span>
+
+                        <div>
+
+                            <h4>
                                 Employment Contracts &amp; Agreements
-                            </h3>
+                            </h4>
 
                             <p>
-                                Assistance with employment contracts,
-                                agreements and related documentation
-                                governing workplace relationships.
+                                Support with employment contracts, agreements
+                                and related workplace documentation.
                             </p>
+
                         </div>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">03.03</span>
+                    </article>
 
-                            <h3>
-                                Employment Termination &amp; Exit Agreements
-                            </h3>
-
-                            <p>
-                                Guidance and documentation relating to
-                                employment exits, termination arrangements
-                                and associated agreements.
-                            </p>
-                        </div>
-
-                    </div>
-                </article>
+                </section>
 
 
                 <!-- CATEGORY 04 -->
-                <article
+
+                <section
                     class="service-category"
-                    id="discipline"
-                    data-reveal
+                    id="workplace"
                 >
-                    <div class="service-category-header">
+
+                    <header class="service-category-header">
 
                         <span class="service-category-number">
                             04
                         </span>
 
-                        <h2>
+                        <h3>
                             Discipline &amp; Workplace Conduct
-                        </h2>
+                        </h3>
 
-                    </div>
+                        <span>
+                            04 Services
+                        </span>
 
-                    <div class="service-category-body">
+                    </header>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">04.01</span>
 
-                            <h3>
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            04.01
+                        </span>
+
+                        <div>
+
+                            <h4>
                                 Disciplinary &amp; Grievance Procedures
-                            </h3>
+                            </h4>
 
                             <p>
-                                Support with workplace disciplinary
-                                processes, grievances and procedural
-                                considerations.
+                                Guidance concerning workplace disciplinary
+                                processes, grievances and procedural matters.
                             </p>
+
                         </div>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">04.02</span>
+                    </article>
 
-                            <h3>
+
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            04.02
+                        </span>
+
+                        <div>
+
+                            <h4>
                                 Workplace Misconduct &amp; Disciplinary Hearings
-                            </h3>
+                            </h4>
 
                             <p>
-                                Assistance with misconduct matters,
-                                disciplinary hearings and related
-                                workplace procedures.
+                                Support with workplace misconduct matters and
+                                disciplinary hearing processes.
                             </p>
+
                         </div>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">04.03</span>
+                    </article>
 
-                            <h3>
-                                Workplace Investigations
-                            </h3>
 
-                            <p>
-                                Guidance on workplace investigations,
-                                fact-finding processes and the handling
-                                of employment-related concerns.
-                            </p>
-                        </div>
+                    <article class="service-detail">
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">04.04</span>
+                        <span class="service-detail-index">
+                            04.03
+                        </span>
 
-                            <h3>
+                        <div>
+
+                            <h4>
                                 Workplace Harassment &amp; Discrimination Claims
-                            </h3>
+                            </h4>
 
                             <p>
-                                Advice concerning workplace harassment,
-                                discrimination complaints and related
-                                employment matters.
+                                Consultancy concerning workplace harassment,
+                                discrimination and related employment concerns.
                             </p>
+
                         </div>
 
-                    </div>
-                </article>
+                    </article>
+
+
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            04.04
+                        </span>
+
+                        <div>
+
+                            <h4>
+                                Workplace Policies &amp; HR Compliance
+                            </h4>
+
+                            <p>
+                                Guidance concerning workplace policies,
+                                procedures and HR compliance requirements.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </section>
 
 
                 <!-- CATEGORY 05 -->
-                <article
+
+                <section
                     class="service-category"
-                    id="labour-relations"
-                    data-reveal
+                    id="compliance"
                 >
-                    <div class="service-category-header">
+
+                    <header class="service-category-header">
 
                         <span class="service-category-number">
                             05
                         </span>
 
-                        <h2>
+                        <h3>
                             Labour Relations &amp; Compliance
-                        </h2>
+                        </h3>
 
-                    </div>
+                        <span>
+                            03 Services
+                        </span>
 
-                    <div class="service-category-body">
+                    </header>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">05.01</span>
 
-                            <h3>
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            05.01
+                        </span>
+
+                        <div>
+
+                            <h4>
                                 Labour Relations &amp; Collective Bargaining
-                            </h3>
+                            </h4>
 
                             <p>
-                                Assistance with labour relations,
-                                collective bargaining and workplace
-                                relationship matters.
+                                Support concerning labour relations and
+                                collective bargaining matters.
                             </p>
+
                         </div>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">05.02</span>
+                    </article>
 
-                            <h3>
+
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            05.02
+                        </span>
+
+                        <div>
+
+                            <h4>
                                 Trade Union &amp; Industrial Relations Matters
-                            </h3>
+                            </h4>
 
                             <p>
-                                Support concerning trade union engagement,
-                                industrial relations and related
-                                workplace matters.
+                                Consultancy concerning trade union relationships
+                                and industrial relations issues.
                             </p>
+
                         </div>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">05.03</span>
+                    </article>
 
-                            <h3>
-                                Workplace Policies &amp; HR Compliance
-                            </h3>
 
-                            <p>
-                                Guidance in developing, reviewing and
-                                aligning workplace policies and HR
-                                procedures with applicable obligations.
-                            </p>
-                        </div>
+                    <article class="service-detail">
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">05.04</span>
+                        <span class="service-detail-index">
+                            05.03
+                        </span>
 
-                            <h3>
+                        <div>
+
+                            <h4>
                                 Labour Inspections &amp; Regulatory Compliance
-                            </h3>
+                            </h4>
 
                             <p>
-                                Advice and preparation relating to labour
-                                inspections, regulatory requirements and
-                                workplace compliance.
+                                Assistance concerning labour inspections and
+                                workplace regulatory compliance.
                             </p>
+
                         </div>
 
-                    </div>
-                </article>
+                    </article>
+
+                </section>
 
 
                 <!-- CATEGORY 06 -->
-                <article
+
+                <section
                     class="service-category"
-                    id="termination"
-                    data-reveal
+                    id="workforce"
                 >
-                    <div class="service-category-header">
+
+                    <header class="service-category-header">
 
                         <span class="service-category-number">
                             06
                         </span>
 
-                        <h2>
+                        <h3>
                             Workforce Changes &amp; Benefits
-                        </h2>
+                        </h3>
 
-                    </div>
+                        <span>
+                            03 Services
+                        </span>
 
-                    <div class="service-category-body">
+                    </header>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">06.01</span>
 
-                            <h3>
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            06.01
+                        </span>
+
+                        <div>
+
+                            <h4>
                                 Retrenchment &amp; Redundancy Matters
-                            </h3>
+                            </h4>
 
                             <p>
-                                Guidance concerning workforce reductions,
-                                retrenchment, redundancy procedures and
-                                associated employment considerations.
+                                Guidance concerning workforce restructuring,
+                                retrenchment and redundancy-related matters.
                             </p>
+
                         </div>
 
-                        <div class="service-detail">
-                            <span class="service-detail-index">06.02</span>
+                    </article>
 
-                            <h3>
+
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            06.02
+                        </span>
+
+                        <div>
+
+                            <h4>
                                 Employee Benefits &amp; Compensation Matters
-                            </h3>
+                            </h4>
 
                             <p>
-                                Advice concerning employment benefits,
-                                compensation and related workplace
-                                entitlements.
+                                Consultancy concerning employee benefits,
+                                compensation and related workplace matters.
                             </p>
+
                         </div>
 
-                    </div>
-                </article>
+                    </article>
+
+
+                    <article class="service-detail">
+
+                        <span class="service-detail-index">
+                            06.03
+                        </span>
+
+                        <div>
+
+                            <h4>
+                                Employment Termination &amp; Exit Agreements
+                            </h4>
+
+                            <p>
+                                Support concerning termination arrangements,
+                                exit agreements and associated documentation.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </section>
 
             </div>
+
         </section>
 
 
         <!-- =====================================================
-             APPROACH
-        ====================================================== -->
-        <section class="section section-dark approach-section">
-            <div class="container">
+             HIGHLIGHT
+             ====================================================== -->
 
-                <div class="section-heading-row" data-reveal>
-                    <div>
-                        <p class="eyebrow eyebrow-light">
-                            Working Method
-                        </p>
+        <section class="service-highlight">
 
-                        <h2 class="section-heading section-heading-light">
-                            Clear steps.
-                            <em>Practical direction.</em>
-                        </h2>
-                    </div>
+            <div class="services-container service-highlight-grid">
 
-                    <p class="section-heading-note">
-                        Every matter is different, but the process should
-                        remain understandable.
-                    </p>
+                <div class="highlight-label">
+                    <strong>03</strong>
+                    The Scope
                 </div>
 
+                <div>
 
-                <div class="approach-grid">
+                    <h2>
+                        From the first employment
+                        <em>conversation</em> to complex
+                        workplace disputes.
+                    </h2>
 
-                    <article class="approach-card" data-reveal>
-                        <span class="approach-card-number">01</span>
-
-                        <h3>
-                            Listen
-                        </h3>
-
-                        <p>
-                            Understand the circumstances, the people
-                            involved and the workplace context before
-                            determining the next step.
-                        </p>
-                    </article>
-
-
-                    <article class="approach-card" data-reveal>
-                        <span class="approach-card-number">02</span>
-
-                        <h3>
-                            Advise
-                        </h3>
-
-                        <p>
-                            Identify the relevant employment issues and
-                            explain the available considerations in
-                            practical terms.
-                        </p>
-                    </article>
-
-
-                    <article class="approach-card" data-reveal>
-                        <span class="approach-card-number">03</span>
-
-                        <h3>
-                            Proceed
-                        </h3>
-
-                        <p>
-                            Move forward with a defined course of action,
-                            whether that involves documentation,
-                            negotiation, compliance or formal proceedings.
-                        </p>
-                    </article>
+                    <p>
+                        The firm's practice covers matters that can arise
+                        throughout the employment relationship — from
+                        agreements and policies through to discipline,
+                        disputes, labour relations, compliance and exit.
+                    </p>
 
                 </div>
 
             </div>
+
         </section>
 
 
         <!-- =====================================================
              CTA
-        ====================================================== -->
-        <section class="cta-section">
-            <div class="container cta-grid">
+             ====================================================== -->
 
-                <div data-reveal>
-                    <p class="eyebrow">
-                        Need Guidance?
-                    </p>
+        <section class="services-cta">
 
-                    <h2>
-                        Start with the
-                        <em>matter itself.</em>
-                    </h2>
-                </div>
+            <div class="services-container">
 
-                <div data-reveal>
-                    <p>
-                        If you have an employment or workplace matter
-                        requiring attention, contact the office to
-                        discuss the circumstances and appropriate next steps.
-                    </p>
+                <div class="services-cta-box">
+
+                    <div>
+
+                        <div class="services-cta-kicker">
+                            Need guidance?
+                        </div>
+
+                        <h2>
+                            Start with the workplace matter in front of you.
+                        </h2>
+
+                        <p>
+                            Contact the office to discuss your enquiry and
+                            determine the appropriate next step.
+                        </p>
+
+                    </div>
 
                     <a
-                        class="button button-primary"
+                        class="services-button"
                         href="contact.html"
                     >
-                        Discuss Your Matter
-                        <span aria-hidden="true">↗</span>
+                        Make an Enquiry&nbsp; →
                     </a>
+
                 </div>
 
             </div>
+
         </section>
 
     </main>
@@ -703,7 +1479,8 @@
 
     <!-- =========================================================
          FOOTER
-    ========================================================== -->
+         ========================================================== -->
+
     <footer class="site-footer">
 
         <div class="container footer-grid">
@@ -715,19 +1492,25 @@
                     href="index.html"
                     aria-label="Messrs Lahema Labour Consultancy Limited home"
                 >
-                    <div class="brand-fallback" aria-hidden="true">
-                        <span class="brand-fallback-mark">L</span>
+
+                    <div class="brand-fallback">
+
+                        <span class="brand-fallback-mark">
+                            L
+                        </span>
 
                         <span class="brand-fallback-text">
-                            Messrs Lahema<br>
-                            Labour Consultancy
+                            Messrs Lahema
+                            <small>Labour Consultancy</small>
                         </span>
+
                     </div>
+
                 </a>
 
                 <p class="footer-brand-copy">
-                    Labour and employment consultancy support
-                    for workplaces in Zambia.
+                    Labour and employment consultancy for workplaces,
+                    employers and employees in Zambia.
                 </p>
 
             </div>
@@ -735,9 +1518,7 @@
 
             <div class="footer-column">
 
-                <span class="footer-column-label">
-                    Navigate
-                </span>
+                <h3>Navigation</h3>
 
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
@@ -749,17 +1530,12 @@
 
             <div class="footer-column">
 
-                <span class="footer-column-label">
-                    Office
-                </span>
+                <h3>Office</h3>
 
                 <p>
                     Development Bank of Zambia<br>
                     2nd Floor, Rooms 1 &amp; 2<br>
-                    Right Wing
-                </p>
-
-                <p>
+                    Right Wing<br>
                     Ndola, Zambia
                 </p>
 
@@ -772,16 +1548,15 @@
 
             <span>
                 © <span data-current-year></span>
-                Messrs Lahema Labour Consultancy Limited
+                Messrs Lahema Labour Consultancy Limited.
             </span>
 
             <span class="footer-credit">
                 Website by
                 <a
-                    class="orange-core-logo"
                     href="https://orangecore.xyz"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                 >
                     Orange Core
                 </a>
@@ -790,6 +1565,9 @@
         </div>
 
     </footer>
+
+
+    <script src="js/main.js"></script>
 
 </body>
 </html>

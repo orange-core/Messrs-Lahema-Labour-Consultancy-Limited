@@ -5,37 +5,805 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>About | Messrs Lahema Labour Consultancy Limited</title>
+
     <meta
         name="description"
         content="Learn about Messrs Lahema Labour Consultancy Limited, a labour and employment consultancy based in Ndola, Zambia."
     >
 
+    <meta name="theme-color" content="#102847">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
+
+    <!-- PAGE-SPECIFIC ABOUT DESIGN -->
+    <style>
+
+        .about-page {
+            background: #f7f5ef;
+            color: #17202c;
+            overflow-x: hidden;
+        }
+
+        .about-container {
+            width: min(1180px, calc(100% - 56px));
+            margin: 0 auto;
+        }
+
+
+        /* =====================================================
+           ABOUT HERO
+           ===================================================== */
+
+        .about-hero {
+            position: relative;
+            min-height: 650px;
+            display: flex;
+            align-items: stretch;
+            background: #f7f5ef;
+            border-bottom: 1px solid #d9d8d1;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 38%;
+            height: 100%;
+            background: #102847;
+        }
+
+        .about-hero-inner {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 390px;
+            gap: 80px;
+            align-items: stretch;
+            width: min(1180px, calc(100% - 56px));
+            margin: 0 auto;
+        }
+
+        .about-hero-copy {
+            align-self: center;
+            padding: 95px 0;
+        }
+
+        .about-kicker {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 30px;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #7b8491;
+        }
+
+        .about-kicker::before {
+            content: "";
+            width: 42px;
+            height: 1px;
+            background: #1e7145;
+        }
+
+        .about-hero h1 {
+            max-width: 750px;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(58px, 7vw, 94px);
+            line-height: 0.96;
+            letter-spacing: -0.05em;
+            font-weight: 500;
+            color: #102847;
+        }
+
+        .about-hero h1 em {
+            color: #1e7145;
+            font-style: normal;
+        }
+
+        .about-hero-copy > p {
+            max-width: 650px;
+            margin: 32px 0 0;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #536071;
+        }
+
+        .about-hero-note {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 34px;
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: #7b8491;
+        }
+
+        .about-hero-note::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #b23a2f;
+        }
+
+
+        /* HERO PROFILE PANEL */
+
+        .about-profile-panel {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 0;
+            padding: 38px;
+            border-left: 1px solid rgba(255,255,255,0.14);
+            border-right: 1px solid rgba(255,255,255,0.14);
+            color: #ffffff;
+        }
+
+        .profile-panel-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.17);
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #9baabd;
+        }
+
+        .profile-symbol {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 116px;
+            height: 116px;
+            margin-top: auto;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 72px;
+            color: #78ad8c;
+        }
+
+        .profile-panel-title {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 29px;
+            line-height: 1.1;
+            font-weight: 500;
+        }
+
+        .profile-panel-copy {
+            margin: 15px 0 0;
+            font-size: 12px;
+            line-height: 1.7;
+            color: #aeb9c8;
+        }
+
+        .profile-panel-bottom {
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.17);
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            line-height: 1.7;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: #8190a3;
+        }
+
+
+        /* =====================================================
+           PRACTICE STORY
+           ===================================================== */
+
+        .about-story {
+            padding: 120px 0;
+            background: #ffffff;
+        }
+
+        .about-story-grid {
+            display: grid;
+            grid-template-columns: 0.5fr 1.5fr;
+            gap: 85px;
+        }
+
+        .story-label {
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: #7b8491;
+        }
+
+        .story-label strong {
+            display: block;
+            margin-bottom: 8px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 38px;
+            font-weight: 400;
+            color: #1e7145;
+        }
+
+        .story-content h2 {
+            max-width: 800px;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(40px, 4.8vw, 68px);
+            line-height: 1.02;
+            letter-spacing: -0.04em;
+            font-weight: 500;
+            color: #102847;
+        }
+
+        .story-content h2 span {
+            color: #667181;
+        }
+
+        .story-content p {
+            max-width: 720px;
+            margin: 28px 0 0;
+            font-size: 16px;
+            line-height: 1.9;
+            color: #536071;
+        }
+
+        .story-content p + p {
+            margin-top: 18px;
+        }
+
+
+        /* =====================================================
+           PRINCIPLES
+           ===================================================== */
+
+        .principles-section {
+            padding: 110px 0 120px;
+            background: #f7f5ef;
+            border-top: 1px solid #d9d8d1;
+        }
+
+        .principles-heading {
+            display: grid;
+            grid-template-columns: 0.5fr 1.5fr;
+            gap: 85px;
+            margin-bottom: 55px;
+        }
+
+        .principles-index {
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: #7b8491;
+        }
+
+        .principles-index strong {
+            display: block;
+            margin-bottom: 8px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 38px;
+            font-weight: 400;
+            color: #1e7145;
+        }
+
+        .principles-heading h2 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(38px, 4.5vw, 61px);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            font-weight: 500;
+            color: #102847;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            border-top: 1px solid #b9b8b0;
+            border-left: 1px solid #b9b8b0;
+        }
+
+        .principle-card {
+            min-height: 260px;
+            padding: 30px;
+            border-right: 1px solid #b9b8b0;
+            border-bottom: 1px solid #b9b8b0;
+            background: #ffffff;
+        }
+
+        .principle-number {
+            display: block;
+            margin-bottom: 78px;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            color: #1e7145;
+        }
+
+        .principle-card h3 {
+            margin: 0 0 12px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 29px;
+            line-height: 1.1;
+            font-weight: 500;
+            color: #102847;
+        }
+
+        .principle-card p {
+            max-width: 430px;
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #697482;
+        }
+
+
+        /* =====================================================
+           PRACTICE MAP
+           ===================================================== */
+
+        .practice-map-section {
+            padding: 115px 0;
+            background: #102847;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .practice-map-section::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            left: -280px;
+            top: -220px;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 50%;
+        }
+
+        .practice-map-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 0.65fr 1.35fr;
+            gap: 85px;
+        }
+
+        .practice-map-index {
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: #8ea3b9;
+        }
+
+        .practice-map-index strong {
+            display: block;
+            margin-bottom: 8px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 38px;
+            font-weight: 400;
+            color: #4ca978;
+        }
+
+        .practice-map-content h2 {
+            max-width: 750px;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(40px, 4.6vw, 64px);
+            line-height: 1.03;
+            letter-spacing: -0.04em;
+            font-weight: 500;
+        }
+
+        .practice-map-content h2 em {
+            color: #81ba96;
+            font-style: normal;
+        }
+
+        .practice-map-content > p {
+            max-width: 670px;
+            margin: 25px 0 50px;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #b3c0ce;
+        }
+
+        .practice-map-list {
+            border-top: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .practice-map-item {
+            display: grid;
+            grid-template-columns: 58px 1fr;
+            gap: 18px;
+            padding: 22px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .practice-map-item-number {
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            color: #4ca978;
+        }
+
+        .practice-map-item h3 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .practice-map-item p {
+            max-width: 560px;
+            margin: 6px 0 0;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #aebbc9;
+        }
+
+
+        /* =====================================================
+           OFFICE
+           ===================================================== */
+
+        .about-office {
+            padding: 115px 0;
+            background: #ffffff;
+        }
+
+        .about-office-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.85fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .about-office h2 {
+            max-width: 700px;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(42px, 5vw, 70px);
+            line-height: 1.02;
+            letter-spacing: -0.04em;
+            font-weight: 500;
+            color: #102847;
+        }
+
+        .about-office h2 em {
+            color: #1e7145;
+            font-style: normal;
+        }
+
+        .about-office-address {
+            max-width: 610px;
+            margin: 28px 0 0;
+            font-size: 16px;
+            line-height: 1.85;
+            color: #536071;
+        }
+
+        .office-record {
+            border: 1px solid #b9b8b0;
+            background: #f7f5ef;
+        }
+
+        .office-record-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 52px;
+            padding: 0 20px;
+            border-bottom: 1px solid #d9d8d1;
+            background: #102847;
+            color: #ffffff;
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .office-record-main {
+            padding: 30px;
+        }
+
+        .office-record-main span {
+            display: block;
+            margin-bottom: 9px;
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: #7b8491;
+        }
+
+        .office-record-main h3 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 32px;
+            font-weight: 500;
+            color: #102847;
+        }
+
+        .office-record-main p {
+            margin: 18px 0 0;
+            font-size: 13px;
+            line-height: 1.75;
+            color: #536071;
+        }
+
+        .office-record-foot {
+            padding: 16px 20px;
+            border-top: 1px solid #d9d8d1;
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: #7b8491;
+        }
+
+
+        /* =====================================================
+           CTA
+           ===================================================== */
+
+        .about-cta {
+            padding: 100px 0;
+            background: #eaf1ec;
+            border-top: 1px solid #d3ddd5;
+        }
+
+        .about-cta-inner {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-cta-kicker {
+            margin-bottom: 12px;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: #1e7145;
+        }
+
+        .about-cta h2 {
+            max-width: 760px;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(38px, 4.4vw, 60px);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            font-weight: 500;
+            color: #102847;
+        }
+
+        .about-cta p {
+            max-width: 650px;
+            margin: 20px 0 0;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #536071;
+        }
+
+        .about-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: 0 24px;
+            border: 1px solid #16305c;
+            border-radius: 4px;
+            background: #16305c;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            transition: transform 180ms ease, background 180ms ease;
+        }
+
+        .about-button:hover {
+            transform: translateY(-2px);
+            background: #102847;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .about-hero::before {
+                width: 32%;
+            }
+
+            .about-hero-inner {
+                grid-template-columns: 1fr 320px;
+                gap: 45px;
+            }
+
+            .about-profile-panel {
+                padding: 28px;
+            }
+
+            .about-story-grid,
+            .principles-heading {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .practice-map-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .about-office-grid {
+                grid-template-columns: 1fr;
+                gap: 55px;
+            }
+        }
+
+        @media (max-width: 760px) {
+
+            .about-container {
+                width: min(100% - 36px, 1180px);
+            }
+
+            .about-hero {
+                min-height: auto;
+            }
+
+            .about-hero::before {
+                display: none;
+            }
+
+            .about-hero-inner {
+                grid-template-columns: 1fr;
+                width: min(100% - 36px, 1180px);
+                gap: 0;
+            }
+
+            .about-hero-copy {
+                padding: 75px 0 65px;
+            }
+
+            .about-hero h1 {
+                font-size: clamp(52px, 14vw, 76px);
+            }
+
+            .about-profile-panel {
+                min-height: 430px;
+                margin-bottom: 36px;
+                background: #102847;
+                border: 0;
+            }
+
+            .about-story {
+                padding: 85px 0;
+            }
+
+            .principles-section {
+                padding: 80px 0 90px;
+            }
+
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .principle-card {
+                min-height: 230px;
+            }
+
+            .practice-map-section {
+                padding: 85px 0;
+            }
+
+            .about-office {
+                padding: 85px 0;
+            }
+
+            .about-cta {
+                padding: 80px 0;
+            }
+
+            .about-cta-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .about-container,
+            .about-hero-inner {
+                width: min(100% - 28px, 1180px);
+            }
+
+            .about-hero-copy {
+                padding-top: 60px;
+            }
+
+            .about-hero h1 {
+                font-size: 50px;
+            }
+
+            .about-profile-panel {
+                padding: 24px;
+            }
+
+            .profile-symbol {
+                width: 95px;
+                height: 95px;
+                font-size: 58px;
+            }
+
+            .story-content h2 {
+                font-size: 39px;
+            }
+
+            .principle-card {
+                padding: 24px;
+            }
+
+            .practice-map-item {
+                grid-template-columns: 42px 1fr;
+            }
+
+            .about-button {
+                width: 100%;
+            }
+        }
+
+    </style>
 </head>
 
-<body>
+<body class="about-page">
+
 
     <!-- =========================================================
          HEADER
-    ========================================================== -->
+         ========================================================== -->
+
     <header class="site-header">
-        <div class="container nav-container">
+
+        <div class="nav-container">
 
             <a
                 class="brand"
                 href="index.html"
                 aria-label="Messrs Lahema Labour Consultancy Limited home"
             >
-                <div class="brand-fallback" aria-hidden="true">
-                    <span class="brand-fallback-mark">L</span>
+
+                <!-- Replace with supplied Lahema logo when assets are available -->
+                <div class="brand-fallback">
+
+                    <span class="brand-fallback-mark">
+                        L
+                    </span>
 
                     <span class="brand-fallback-text">
-                        Messrs Lahema<br>
-                        Labour Consultancy
+                        Messrs Lahema
+                        <small>Labour Consultancy</small>
                     </span>
+
                 </div>
+
             </a>
+
 
             <button
                 class="menu-toggle"
@@ -48,11 +816,13 @@
                 <span></span>
             </button>
 
+
             <nav
                 class="primary-navigation"
                 id="primary-navigation"
                 aria-label="Primary navigation"
             >
+
                 <a class="nav-link" href="index.html">
                     Home
                 </a>
@@ -73,140 +843,130 @@
                     Contact
                 </a>
 
-                <a
-                    class="nav-link nav-link-cta"
-                    href="contact.html"
-                >
-                    Get In Touch
+                <a class="nav-link nav-link-cta" href="contact.html">
+                    Make an Enquiry
                 </a>
+
             </nav>
 
         </div>
+
     </header>
 
 
     <main>
 
-        <!-- =====================================================
-             PAGE HERO
-        ====================================================== -->
-        <section class="page-hero">
-            <div class="container page-hero-grid">
 
-                <div>
-                    <p class="eyebrow">
-                        <span>03</span>
-                        About The Practice
-                    </p>
+        <!-- =====================================================
+             HERO
+             ====================================================== -->
+
+        <section class="about-hero">
+
+            <div class="about-hero-inner">
+
+                <div class="about-hero-copy">
+
+                    <div class="about-kicker">
+                        <span>About the Practice</span>
+                    </div>
 
                     <h1>
-                        A clearer approach to
-                        <em>workplace matters.</em>
+                        Focused on the
+                        <em>working relationship.</em>
                     </h1>
 
                     <p>
-                        Messrs Lahema Labour Consultancy Limited provides
-                        labour and employment consultancy support from
-                        Ndola, Zambia, with a focus on helping clients
-                        understand workplace matters and determine
-                        appropriate next steps.
+                        Messrs Lahema Labour Consultancy Limited is a
+                        professional labour and employment consultancy based
+                        in Ndola, Zambia, supporting clients across a broad
+                        range of workplace matters.
                     </p>
-                </div>
 
-                <aside class="page-hero-index">
-
-                    <div class="page-hero-index-top">
-                        <span>Practice Record</span>
-                        <span>Ndola / ZM</span>
+                    <div class="about-hero-note">
+                        Professional practice / Ndola / Zambia
                     </div>
 
-                    <div class="page-hero-index-body">
+                </div>
 
-                        <span class="docket">
-                            MLC / ABOUT / 2026
-                        </span>
 
-                        <strong>
-                            Labour &amp;<br>
-                            Employment
-                        </strong>
+                <aside class="about-profile-panel">
 
-                        <p>
-                            Practical consultancy for employment,
-                            workplace and labour relations matters.
+                    <div class="profile-panel-top">
+                        <span>Practice Profile</span>
+                        <span>001</span>
+                    </div>
+
+                    <div class="profile-symbol">
+                        L
+                    </div>
+
+                    <div>
+
+                        <h2 class="profile-panel-title">
+                            Labour.
+                            Employment.
+                            Workplace.
+                        </h2>
+
+                        <p class="profile-panel-copy">
+                            A practice centred on the issues that shape
+                            working relationships between employers and employees.
                         </p>
 
+                    </div>
+
+                    <div class="profile-panel-bottom">
+                        Based in Ndola, Zambia<br>
+                        Labour &amp; Employment Consultancy
                     </div>
 
                 </aside>
 
             </div>
+
         </section>
 
 
         <!-- =====================================================
              STORY
-        ====================================================== -->
-        <section class="section section-paper about-story">
+             ====================================================== -->
 
-            <div class="container about-story-grid">
+        <section class="about-story">
 
-                <div
-                    class="about-story-label"
-                    data-reveal
-                >
-                    <p class="eyebrow">
-                        The Practice
-                    </p>
+            <div class="about-container about-story-grid">
 
-                    <span class="about-story-index">
-                        01
-                    </span>
-
-                    <span>
-                        MLC / NDOLA
-                    </span>
+                <div class="story-label">
+                    <strong>01</strong>
+                    The Practice
                 </div>
 
-
-                <div
-                    class="about-story-content"
-                    data-reveal
-                >
+                <div class="story-content">
 
                     <h2>
-                        Supporting clearer decisions
-                        in employment matters.
+                        Workplace matters require
+                        <span>more than an answer.</span>
                     </h2>
 
-                    <p class="about-story-lead">
-                        Workplace matters often involve more than
-                        a single question. They can affect employees,
-                        employers, contracts, procedures, relationships
-                        and the future direction of an organisation.
+                    <p>
+                        Employment relationships involve people, organisations,
+                        responsibilities and expectations. When an issue arises,
+                        the practical consequences can extend beyond the immediate
+                        question.
                     </p>
 
                     <p>
-                        Messrs Lahema Labour Consultancy Limited
-                        approaches these matters by first understanding
-                        the circumstances, identifying the relevant
-                        employment issues and helping clients establish
-                        a practical way forward.
+                        Lahema's practice is focused on labour and employment
+                        consultancy, providing structured professional support
+                        across workplace matters including contracts, discipline,
+                        disputes, labour relations, compliance, workforce changes
+                        and employment advisory.
                     </p>
 
                     <p>
-                        The practice covers a broad range of labour
-                        and employment matters, including contracts,
-                        workplace policies, disciplinary processes,
-                        disputes, employee rights, labour relations,
-                        compliance and employment termination.
-                    </p>
-
-                    <p>
-                        The objective is straightforward: provide
-                        clients with a clearer understanding of the
-                        matter they are facing and the options available
-                        to them.
+                        The objective is to help clients understand the matter
+                        before them, consider the relevant issues and approach
+                        the next step with greater clarity.
                     </p>
 
                 </div>
@@ -218,127 +978,100 @@
 
         <!-- =====================================================
              PRINCIPLES
-        ====================================================== -->
-        <section class="section principles-section">
+             ====================================================== -->
 
-            <div class="container">
+        <section class="principles-section">
 
-                <div
-                    class="section-heading-row"
-                    data-reveal
-                >
+            <div class="about-container">
 
-                    <div>
+                <div class="principles-heading">
 
-                        <p class="eyebrow">
-                            Working Principles
-                        </p>
-
-                        <h2 class="section-heading">
-                            How the practice
-                            <em>approaches its work.</em>
-                        </h2>
-
+                    <div class="principles-index">
+                        <strong>02</strong>
+                        Practice Principles
                     </div>
 
-                    <p class="section-heading-note">
-                        Clear communication and practical direction
-                        remain central to the client experience.
-                    </p>
+                    <h2>
+                        A professional approach
+                        to workplace matters.
+                    </h2>
 
                 </div>
 
 
                 <div class="principles-grid">
 
-                    <!-- PRINCIPLE 01 -->
-                    <article
-                        class="principle-card"
-                        data-reveal
-                    >
+                    <article class="principle-card">
 
                         <span class="principle-number">
-                            01
+                            01 / CLARITY
                         </span>
 
                         <h3>
-                            Clarity
+                            Clear Advice
                         </h3>
 
                         <p>
-                            Employment matters can involve technical
-                            requirements and competing considerations.
-                            The first step is making the situation
-                            understandable.
+                            Workplace matters can become complicated quickly.
+                            The starting point is understanding the issue and
+                            identifying the relevant considerations clearly.
                         </p>
 
                     </article>
 
 
-                    <!-- PRINCIPLE 02 -->
-                    <article
-                        class="principle-card"
-                        data-reveal
-                    >
+                    <article class="principle-card">
 
                         <span class="principle-number">
-                            02
+                            02 / PRACTICE
                         </span>
 
                         <h3>
-                            Professional Practice
+                            Professional Process
                         </h3>
 
                         <p>
-                            Each matter deserves careful attention,
-                            proper documentation and a professional
-                            approach to the circumstances involved.
+                            Proper process and documentation matter. A structured
+                            approach helps clients move through workplace issues
+                            with greater certainty.
                         </p>
 
                     </article>
 
 
-                    <!-- PRINCIPLE 03 -->
-                    <article
-                        class="principle-card"
-                        data-reveal
-                    >
+                    <article class="principle-card">
 
                         <span class="principle-number">
-                            03
+                            03 / PRACTICALITY
                         </span>
 
                         <h3>
-                            Practicality
+                            Practical Direction
                         </h3>
 
                         <p>
-                            Advice should connect to the actual
-                            workplace situation, helping clients
-                            understand what can be considered next.
+                            Advice should connect to the circumstances in front
+                            of the client and provide a practical understanding
+                            of possible next steps.
                         </p>
 
                     </article>
 
 
-                    <!-- PRINCIPLE 04 -->
-                    <article
-                        class="principle-card"
-                        data-reveal
-                    >
+                    <article class="principle-card">
 
                         <span class="principle-number">
-                            04
+                            04 / PEOPLE
                         </span>
 
                         <h3>
-                            People
+                            Workplace Context
                         </h3>
 
                         <p>
-                            Employment matters ultimately concern
-                            working relationships and the people
-                            within them. Context matters.
+                            Employment matters involve people as well as
+                            organisations. Understanding that context is part of
+                            approaching workplace concerns responsibly.
                         </p>
 
                     </article>
@@ -352,119 +1085,97 @@
 
         <!-- =====================================================
              PRACTICE MAP
-        ====================================================== -->
-        <section class="section section-dark practice-map-section">
+             ====================================================== -->
 
-            <div class="container practice-map-grid">
+        <section class="practice-map-section">
 
-                <div
-                    class="practice-map"
-                    data-reveal
-                >
+            <div class="about-container practice-map-grid">
 
-                    <div class="practice-map-top">
-                        <span class="docket">
-                            MLC / PRACTICE MAP
-                        </span>
-
-                        <span>
-                            04 / 04
-                        </span>
-                    </div>
-
-                    <div class="practice-map-center">
-
-                        <span class="practice-map-ring">
-                            <span>MLC</span>
-                        </span>
-
-                        <span class="practice-map-line line-one"></span>
-                        <span class="practice-map-line line-two"></span>
-                        <span class="practice-map-line line-three"></span>
-
-                    </div>
-
-                    <div class="practice-map-bottom">
-                        <span>
-                            PEOPLE
-                        </span>
-
-                        <span>
-                            WORK
-                        </span>
-
-                        <span>
-                            DIRECTION
-                        </span>
-                    </div>
-
+                <div class="practice-map-index">
+                    <strong>03</strong>
+                    Practice Focus
                 </div>
 
+                <div class="practice-map-content">
 
-                <div
-                    class="practice-map-list"
-                    data-reveal
-                >
-
-                    <p class="eyebrow eyebrow-light">
-                        A Connected Practice
-                    </p>
-
-                    <h2 class="section-heading section-heading-light">
-                        People.
-                        <em>Work. Direction.</em>
+                    <h2>
+                        Where workplace
+                        <em>issues meet action.</em>
                     </h2>
 
                     <p>
-                        Employment matters sit at the intersection
-                        of people, workplace systems and legal or
-                        regulatory obligations.
+                        Lahema's work spans the employment relationship from
+                        its contractual foundations through to workplace
+                        disputes, compliance concerns and changes in employment.
                     </p>
 
-                    <div class="practice-map-item">
 
-                        <span>01</span>
+                    <div class="practice-map-list">
 
-                        <div>
-                            <strong>People</strong>
+                        <article class="practice-map-item">
 
-                            <p>
-                                Employees, employers and the working
-                                relationships between them.
-                            </p>
-                        </div>
+                            <span class="practice-map-item-number">
+                                01
+                            </span>
 
-                    </div>
+                            <div>
 
+                                <h3>
+                                    People
+                                </h3>
 
-                    <div class="practice-map-item">
+                                <p>
+                                    Employee rights, employer responsibilities,
+                                    workplace conduct and employment relationships.
+                                </p>
 
-                        <span>02</span>
+                            </div>
 
-                        <div>
-                            <strong>Work</strong>
-
-                            <p>
-                                Contracts, policies, procedures,
-                                conduct and workplace obligations.
-                            </p>
-                        </div>
-
-                    </div>
+                        </article>
 
 
-                    <div class="practice-map-item">
+                        <article class="practice-map-item">
 
-                        <span>03</span>
+                            <span class="practice-map-item-number">
+                                02
+                            </span>
 
-                        <div>
-                            <strong>Direction</strong>
+                            <div>
 
-                            <p>
-                                Understanding the circumstances and
-                                establishing an appropriate way forward.
-                            </p>
-                        </div>
+                                <h3>
+                                    Work
+                                </h3>
+
+                                <p>
+                                    Contracts, policies, discipline, labour
+                                    relations, compliance and workplace processes.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="practice-map-item">
+
+                            <span class="practice-map-item-number">
+                                03
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Direction
+                                </h3>
+
+                                <p>
+                                    Advisory, negotiation, dispute resolution,
+                                    investigations and employment exit matters.
+                                </p>
+
+                            </div>
+
+                        </article>
 
                     </div>
 
@@ -476,205 +1187,57 @@
 
 
         <!-- =====================================================
-             SERVICES CONNECTION
-        ====================================================== -->
-        <section class="section about-services-section">
+             OFFICE
+             ====================================================== -->
 
-            <div class="container">
+        <section class="about-office">
 
-                <div
-                    class="section-heading-row"
-                    data-reveal
-                >
+            <div class="about-container about-office-grid">
 
-                    <div>
+                <div>
 
-                        <p class="eyebrow">
-                            Areas Of Practice
-                        </p>
-
-                        <h2 class="section-heading">
-                            One practice,
-                            <em>multiple workplace needs.</em>
-                        </h2>
-
-                    </div>
-
-                    <a
-                        class="text-link"
-                        href="services.html"
-                    >
-                        View all services
-                        <span aria-hidden="true">↗</span>
-                    </a>
-
-                </div>
-
-
-                <div class="practice-strip about-practice-strip">
-
-                    <a
-                        class="practice-strip-item"
-                        href="services.html#employment-law"
-                    >
-                        <span class="practice-strip-number">
-                            01
-                        </span>
-
-                        <strong>
-                            Employment Law
-                        </strong>
-
-                        <span class="practice-strip-arrow">
-                            ↗
-                        </span>
-                    </a>
-
-
-                    <a
-                        class="practice-strip-item"
-                        href="services.html#employment-disputes"
-                    >
-                        <span class="practice-strip-number">
-                            02
-                        </span>
-
-                        <strong>
-                            Disputes &amp; Resolution
-                        </strong>
-
-                        <span class="practice-strip-arrow">
-                            ↗
-                        </span>
-                    </a>
-
-
-                    <a
-                        class="practice-strip-item"
-                        href="services.html#contracts"
-                    >
-                        <span class="practice-strip-number">
-                            03
-                        </span>
-
-                        <strong>
-                            Contracts
-                        </strong>
-
-                        <span class="practice-strip-arrow">
-                            ↗
-                        </span>
-                    </a>
-
-
-                    <a
-                        class="practice-strip-item"
-                        href="services.html#discipline"
-                    >
-                        <span class="practice-strip-number">
-                            04
-                        </span>
-
-                        <strong>
-                            Workplace Conduct
-                        </strong>
-
-                        <span class="practice-strip-arrow">
-                            ↗
-                        </span>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             LOCATION
-        ====================================================== -->
-        <section class="section section-paper location-section">
-
-            <div class="container location-grid">
-
-                <div data-reveal>
-
-                    <p class="eyebrow">
-                        Office
-                    </p>
-
-                    <h2 class="location-title">
-                        Based in
+                    <h2>
+                        A practice based in
                         <em>Ndola.</em>
                     </h2>
 
-                    <p class="location-address">
-                        Development Bank of Zambia<br>
-                        2nd Floor, Rooms 1 &amp; 2<br>
-                        Right Wing<br>
-                        Between Kafubu Mall and ZRA Building<br>
-                        Ndola, Zambia
+                    <p class="about-office-address">
+                        Messrs Lahema Labour Consultancy Limited operates from
+                        the Development Bank of Zambia, providing a central
+                        professional office location in Ndola.
                     </p>
 
                 </div>
 
 
-                <div
-                    class="location-card"
-                    data-reveal
-                >
+                <aside class="office-record">
 
-                    <div class="location-card-top">
+                    <div class="office-record-head">
+                        <span>Office Record</span>
+                        <span>NDOLA / ZM</span>
+                    </div>
 
-                        <span class="docket">
-                            OFFICE RECORD
-                        </span>
+                    <div class="office-record-main">
 
-                        <span>
-                            NDOLA / ZM
-                        </span>
+                        <span>Location</span>
+
+                        <h3>
+                            Development Bank of Zambia
+                        </h3>
+
+                        <p>
+                            2nd Floor, Rooms 1 &amp; 2, Right Wing<br>
+                            Between Kafubu Mall and ZRA Building<br>
+                            Ndola, Zambia
+                        </p>
 
                     </div>
 
-                    <div class="location-card-body">
-
-                        <div>
-                            <span>Building</span>
-
-                            <strong>
-                                Development Bank<br>
-                                of Zambia
-                            </strong>
-                        </div>
-
-                        <div>
-                            <span>Floor</span>
-
-                            <strong>
-                                2nd Floor
-                            </strong>
-                        </div>
-
-                        <div>
-                            <span>Rooms</span>
-
-                            <strong>
-                                1 &amp; 2
-                            </strong>
-                        </div>
-
-                        <div>
-                            <span>Wing</span>
-
-                            <strong>
-                                Right Wing
-                            </strong>
-                        </div>
-
+                    <div class="office-record-foot">
+                        Principal office location
                     </div>
 
-                </div>
+                </aside>
 
             </div>
 
@@ -683,42 +1246,35 @@
 
         <!-- =====================================================
              CTA
-        ====================================================== -->
-        <section class="cta-section">
+             ====================================================== -->
 
-            <div class="container cta-grid">
+        <section class="about-cta">
 
-                <div data-reveal>
+            <div class="about-container about-cta-inner">
 
-                    <p class="eyebrow">
-                        Start A Conversation
-                    </p>
+                <div>
+
+                    <div class="about-cta-kicker">
+                        Continue to the practice
+                    </div>
 
                     <h2>
-                        Have a workplace
-                        <em>matter to discuss?</em>
+                        Explore the services available for workplace matters.
                     </h2>
 
-                </div>
-
-
-                <div data-reveal>
-
                     <p>
-                        Share the nature of the matter with the office
-                        and begin the conversation about the appropriate
-                        next step.
+                        Review the firm's practice areas or contact the office
+                        to begin an enquiry.
                     </p>
 
-                    <a
-                        class="button button-primary"
-                        href="contact.html"
-                    >
-                        Contact The Office
-                        <span aria-hidden="true">↗</span>
-                    </a>
-
                 </div>
+
+                <a
+                    class="about-button"
+                    href="services.html"
+                >
+                    View Services&nbsp; →
+                </a>
 
             </div>
 
@@ -729,7 +1285,8 @@
 
     <!-- =========================================================
          FOOTER
-    ========================================================== -->
+         ========================================================== -->
+
     <footer class="site-footer">
 
         <div class="container footer-grid">
@@ -741,19 +1298,25 @@
                     href="index.html"
                     aria-label="Messrs Lahema Labour Consultancy Limited home"
                 >
-                    <div class="brand-fallback" aria-hidden="true">
-                        <span class="brand-fallback-mark">L</span>
+
+                    <div class="brand-fallback">
+
+                        <span class="brand-fallback-mark">
+                            L
+                        </span>
 
                         <span class="brand-fallback-text">
-                            Messrs Lahema<br>
-                            Labour Consultancy
+                            Messrs Lahema
+                            <small>Labour Consultancy</small>
                         </span>
+
                     </div>
+
                 </a>
 
                 <p class="footer-brand-copy">
-                    Labour and employment consultancy support
-                    for workplaces in Zambia.
+                    Labour and employment consultancy for workplaces,
+                    employers and employees in Zambia.
                 </p>
 
             </div>
@@ -761,9 +1324,7 @@
 
             <div class="footer-column">
 
-                <span class="footer-column-label">
-                    Navigate
-                </span>
+                <h3>Navigation</h3>
 
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
@@ -775,17 +1336,12 @@
 
             <div class="footer-column">
 
-                <span class="footer-column-label">
-                    Office
-                </span>
+                <h3>Office</h3>
 
                 <p>
                     Development Bank of Zambia<br>
                     2nd Floor, Rooms 1 &amp; 2<br>
-                    Right Wing
-                </p>
-
-                <p>
+                    Right Wing<br>
                     Ndola, Zambia
                 </p>
 
@@ -798,16 +1354,15 @@
 
             <span>
                 © <span data-current-year></span>
-                Messrs Lahema Labour Consultancy Limited
+                Messrs Lahema Labour Consultancy Limited.
             </span>
 
             <span class="footer-credit">
                 Website by
                 <a
-                    class="orange-core-logo"
                     href="https://orangecore.xyz"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                 >
                     Orange Core
                 </a>
@@ -816,6 +1371,9 @@
         </div>
 
     </footer>
+
+
+    <script src="js/main.js"></script>
 
 </body>
 </html>
